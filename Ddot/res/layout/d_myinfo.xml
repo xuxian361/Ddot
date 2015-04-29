@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/d_common_blue">
+
+        <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_setting"
+                android:src="@drawable/icon_settings"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/relative_info">
+            <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/img_header"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_profile"
+                    android:padding="5dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sundy Xu"
+                    android:id="@+id/txt_username"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_header"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/img_info_arrow"/>
+            <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/img_info_arrow"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bule_right_arrow"/>
+        </RelativeLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/txt_info_divider"
+                android:background="@color/d_color_bottom_text_normal"
+                android:layout_below="@+id/relative_info"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/txt_info_divider"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/relative_bookmark">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_bookmark"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"/>
+
+            <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/img_bookmark_arrow"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bule_right_arrow"/>
+        </RelativeLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/txt_bookmark_divider"
+                android:background="@color/d_color_bottom_text_normal"
+                android:layout_below="@+id/relative_bookmark"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/txt_bookmark_divider"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/relative_contact">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/my_contacts"
+                      android:layout_centerVertical="true"
+                      android:layout_marginLeft="10dp"/>
+            <ImageView android:layout_width="15dp"
+                       android:layout_height="15dp"
+                       android:id="@+id/img_contact_arrow"
+                       android:layout_marginRight="10dp"
+                       android:layout_alignParentRight="true"
+                       android:layout_centerVertical="true"
+                       android:scaleType="fitCenter"
+                       android:src="@drawable/bule_right_arrow"/>
+        </RelativeLayout>
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/d_color_bottom_text_normal"
+                  android:layout_below="@+id/relative_contact"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginRight="5dp"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_3"
+                android:text="@string/logout"
+                android:id="@+id/btn_logout" android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

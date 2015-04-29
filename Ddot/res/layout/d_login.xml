@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             layout="@layout/d_layout_back"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                >
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText2"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/phone_num"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText3"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/hint_password"/>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/forget_pwd"
+                        android:id="@+id/txt_forgetPwd"
+                        android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_3"
+                android:text="@string/login"
+                android:id="@+id/btn_login"
+                android:layout_alignParentBottom="false"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_above="@+id/txt_not_member"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/not_member"
+                android:id="@+id/txt_not_member"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

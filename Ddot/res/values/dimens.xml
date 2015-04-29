@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edt_height">38dp</dimen>
+    <dimen name="btn_height_1">35dp</dimen>
+    <dimen name="btn_height_2">40dp</dimen>
+    <dimen name="btn_height_3">50dp</dimen>
+
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             layout="@layout/d_layout_back"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                >
+            <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edt_height"
+                        android:id="@+id/editText1"
+                        android:layout_toLeftOf="@+id/btn_getValidateCode"
+                        android:hint="@string/phone_num"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/edt_height"
+                        android:text="@string/get_validate_code"
+                        android:id="@+id/btn_getValidateCode"
+                        android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText2"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/hint_validate_code"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText3"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/hint_password"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText4"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/hint_confirm_password"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edt_height"
+                    android:id="@+id/editText5"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/hint_username"/>
+
+        </LinearLayout>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height_3"
+                android:text="立即注册"
+                android:id="@+id/button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+</LinearLayout>
+
