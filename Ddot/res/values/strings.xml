@@ -13,4 +13,14 @@
     <string name="my_bookmark">我的收藏</string>
     <string name="my_contacts">通讯录</string>
     <string name="logout">安全登出</string>
+    <string name="push_notify">通知提醒</string>
+    <string name="service_flow">服务流程</string>
+    <string name="help">帮助</string>
+    <string name="terms_condition">服务条款与制约</string>
+    <string name="normal_question">常见问题</string>
+    <string name="contact_us">联络我们</string>
+    <string name="about_us">关于我们</string>
+    <string name="version">版本Android 1.0</string>
+    <string name="update_password">修改密码</string>
+    <string name="update_address">常用地址</string>
 </resources>
