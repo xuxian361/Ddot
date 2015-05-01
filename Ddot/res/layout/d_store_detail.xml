@@ -129,7 +129,8 @@
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/scrollView" android:layout_above="@+id/relative_bottom">
+                android:id="@+id/scrollView"
+                android:layout_above="@+id/relative_bottom">
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="fill_parent"
@@ -146,7 +147,163 @@
                         android:fadingEdge="none"
                         android:layout_below="@+id/relative_hot_restaurant"
                         />
-
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="HTC One系列免费换膜！！"
+                            android:id="@+id/txt_title"
+                            android:textSize="16dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="200￥"
+                            android:id="@+id/txt_amount"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发布时间：2015.5.1 12:58"
+                            android:id="@+id/txt_date"
+                            android:textSize="10dp"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="已有1763浏览"
+                              android:id="@+id/txt_count"
+                              android:textSize="10dp"
+                              android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/d_base_color_text_gray"
+                        android:layout_marginTop="5dp"/>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="累计230人预约"
+                            android:id="@+id/txt_order_count"
+                            android:textSize="12dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="135****6578"
+                            android:id="@+id/txt_user"
+                            android:textSize="10dp"
+                            android:maxLines="1"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="维修很快，质量还好！信得过喔"
+                            android:id="@+id/txt_comment"
+                            android:textSize="10dp"
+                            android:layout_toRightOf="@+id/txt_user"
+                            android:maxLines="2"/>
+                    <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/d_bule_right_arrow"/>
+                </RelativeLayout>
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:background="@color/d_base_color_text_gray"
+                          android:layout_marginTop="5dp"
+                        />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HTC服务正佳店"
+                        android:id="@+id/txt_store"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"/>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地址: 广州市天河区体育中心天河正佳M层S260"
+                            android:id="@+id/txt_address"
+                            android:textSize="12dp"
+                            android:layout_centerVertical="true"/>
+                    <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/img_address"
+                            android:src="@drawable/icon_map"
+                            android:scaleType="center"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="电话: 0755-28792330"
+                            android:id="@+id/txt_phone"
+                            android:textSize="12dp"
+                            android:layout_centerVertical="true"/>
+                    <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/img_phone"
+                            android:src="@drawable/phone_call"
+                            android:scaleType="center"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="详细信息"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="广州市天河区体育中心正佳M层HTC旗舰维修点是......"
+                        android:id="@+id/txt_detail_msg" android:layout_marginLeft="10dp" android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp" android:textSize="10dp"/>
 
             </LinearLayout>
         </ScrollView>
