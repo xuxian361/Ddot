@@ -37,4 +37,7 @@
     <string name="sort">排序</string>
     <string name="go">GO</string>
     <string name="filter">筛选更多</string>
+    <string name="message">消息</string>
+    <string name="me">我</string>
+    <string name="search">搜索</string>
 </resources>
