@@ -31,5 +31,16 @@
     <color name="d_chatLeftText">#000</color>
     <color name="d_red">#f00</color>
     <color name="gorden">#f2af2d</color>
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+    <color name="grey">#A2A2A2</color>
+    <color name="yellow">#fffac40e</color>
+    <color name="green">#4cb017</color>
+    <color name="orange">#FFA602</color>
+    <color name="transparent4">#bb000000</color>
+    <color name="transparent5">#8000</color>
+    <color name="transparent3">#00000000</color>
+
+
 
 </resources>

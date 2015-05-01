@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/d_common_blue">
+
+        <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_more"
+                android:src="@drawable/d_more"
+                android:layout_alignParentRight="true" android:scaleType="center"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

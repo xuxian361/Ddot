@@ -10,20 +10,32 @@
             android:layout_height="60dp"
             android:background="@color/d_common_blue">
 
+        <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_scan"
+                android:src="@drawable/d_scan"
+                android:scaleType="center"
+                />
+
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/btn_delete"
-                android:layout_marginLeft="15dp" android:layout_marginRight="-5dp">
+                android:layout_marginRight="-5dp" android:layout_toRightOf="@+id/btn_scan">
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/edt_search"
                     android:background="@null"
-                    android:layout_above="@+id/txt_search_bottom" android:layout_alignLeft="@+id/txt_search_bottom"
+                    android:layout_above="@+id/txt_search_bottom"
+                    android:layout_alignLeft="@+id/txt_search_bottom"
                     android:layout_marginBottom="3dp"
                     android:hint="HTC"
-                    android:textColorHint="@color/d_white" android:maxLines="1"/>
+                    android:textColorHint="@color/d_white"
+                    android:maxLines="1"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -75,41 +87,46 @@
                         android:layout_height="wrap_content"
                         >
                     <Button
-                            android:layout_width="55dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/phone_brand"
                             android:id="@+id/btn_brand"
                             android:textSize="10dp"
-                            android:background="@drawable/corner_stroke_all_white"/>
+                            android:background="@drawable/corner_stroke_all_white" android:paddingLeft="5dp"
+                            android:paddingRight="5dp"/>
                     <Button
-                            android:layout_width="55dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/phone_model"
                             android:id="@+id/btn_model"
                             android:textSize="10dp"
-                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
+                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
                     <Button
-                            android:layout_width="55dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/fix_parts"
                             android:id="@+id/btn_parts"
                             android:textSize="10dp"
-                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
+                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
                     <Button
-                            android:layout_width="55dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/store_address"
                             android:id="@+id/btn_store_address"
                             android:textSize="10dp"
-                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
+                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
 
                     <Button
-                            android:layout_width="55dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="30dp"
                             android:text="@string/filter"
                             android:id="@+id/btn_search_more"
                             android:textSize="10dp"
-                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
+                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
                 </LinearLayout>
             </HorizontalScrollView>
         </RelativeLayout>

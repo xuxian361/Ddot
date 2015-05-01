@@ -203,6 +203,18 @@
                             android:text="累计230人预约"
                             android:id="@+id/txt_order_count"
                             android:textSize="12dp"/>
+
+                    <RatingBar
+                            style="@style/starRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rating_points"
+                            android:layout_gravity="center"
+                            android:numStars="5"
+                            android:stepSize="1.0"
+                            android:isIndicator="false"
+                            android:layout_alignParentRight="true"
+                            />
                 </RelativeLayout>
                 <RelativeLayout
                         android:layout_width="match_parent"
@@ -302,8 +314,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="广州市天河区体育中心正佳M层HTC旗舰维修点是......"
-                        android:id="@+id/txt_detail_msg" android:layout_marginLeft="10dp" android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp" android:textSize="10dp"/>
+                        android:id="@+id/txt_detail_msg"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:textSize="10dp"/>
 
             </LinearLayout>
         </ScrollView>
