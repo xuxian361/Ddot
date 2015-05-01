@@ -1,39 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res/com.sundy.Ddot"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             layout="@layout/d_layout_back"/>
+
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/relative_bottom">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/d_base_color_text_gray"/>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:id="@+id/linear_client_service">
 
-        <include android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 layout="@layout/d_layout_back"/>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/d_client_service"
+                        android:scaleType="center"
+                        android:layout_alignParentRight="true"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/client_service"
+                        android:textSize="10dp"
+                        android:layout_marginTop="5dp"/>
+            </LinearLayout>
 
-        <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:background="@null"
-                android:layout_centerVertical="true"
-                android:id="@+id/btn_share"
-                android:src="@drawable/d_share"
-                android:scaleType="fitCenter"
-                android:padding="10dp"
-                android:layout_alignParentRight="false" android:layout_toLeftOf="@+id/btn_bookmark"/>
+            <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/d_base_color_text_gray"
+                    android:id="@+id/txt_divider_1"
+                    android:layout_toRightOf="@+id/linear_client_service"/>
 
-        <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:background="@null"
-                android:layout_centerVertical="true"
-                android:id="@+id/btn_bookmark"
-                android:src="@drawable/d_bookmark"
-                android:scaleType="fitCenter"
-                android:padding="10dp"
-                android:layout_alignParentRight="true"/>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:id="@+id/linear_bookmark"
+                    android:layout_toRightOf="@+id/txt_divider_1">
 
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/d_bookmark"
+                        android:scaleType="center"
+                        android:layout_alignParentRight="true"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bookmark"
+                        android:textSize="10dp"
+                        android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/d_base_color_text_gray"
+                    android:id="@+id/txt_divider_2"
+                    android:layout_toRightOf="@+id/linear_bookmark"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:id="@+id/linear_share"
+                    android:layout_toRightOf="@+id/txt_divider_2">
+
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/d_share"
+                        android:scaleType="center"
+                        android:layout_alignParentRight="true"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/share"
+                        android:textSize="10dp"
+                        android:layout_marginTop="5dp"/>
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/d_base_color_text_gray"
+                    android:id="@+id/txt_divider_3"
+                    android:layout_toRightOf="@+id/linear_share"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/free_order"
+                    android:id="@+id/btn_order"
+                    android:layout_toRightOf="@+id/txt_divider_3"
+                    android:gravity="center"
+                    android:background="@color/d_tree_green"
+                    android:textColor="@color/d_white"/>
+
+        </RelativeLayout>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView" android:layout_above="@+id/relative_bottom">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+
+                <it.sephiroth.android.library.widget.HListView
+                        android:scrollbars="none"
+                        android:id="@+id/lv_imgs"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:divider="@null"
+                        app:dividerWidth="14dp"
+                        android:fadingEdge="none"
+                        android:layout_below="@+id/relative_hot_restaurant"
+                        />
+
+
+            </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 </LinearLayout>

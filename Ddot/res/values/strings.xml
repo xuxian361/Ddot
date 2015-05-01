@@ -23,4 +23,8 @@
     <string name="version">版本Android 1.0</string>
     <string name="update_password">修改密码</string>
     <string name="update_address">常用地址</string>
+    <string name="client_service">客服</string>
+    <string name="bookmark">收藏</string>
+    <string name="share">分享</string>
+    <string name="free_order">免费预约</string>
 </resources>

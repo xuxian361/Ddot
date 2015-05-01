@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Ddot.iml" filepath="$PROJECT_DIR$/Ddot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HorizontalVariableListView/HorizontalVariableListView.iml" filepath="$PROJECT_DIR$/../HorizontalVariableListView/HorizontalVariableListView.iml" />
     </modules>
   </component>
 </project>
