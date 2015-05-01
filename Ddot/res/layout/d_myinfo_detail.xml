@@ -57,7 +57,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/edit"
+                    android:src="@drawable/d_edit"
                     android:padding="10dp"/>
         </RelativeLayout>
         <RelativeLayout
@@ -83,7 +83,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/edit"
+                    android:src="@drawable/d_edit"
                     android:padding="10dp"/>
         </RelativeLayout>
 
@@ -110,7 +110,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/edit"
+                    android:src="@drawable/d_edit"
                     android:padding="10dp"/>
         </RelativeLayout>
 
@@ -138,7 +138,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/edit"
+                    android:src="@drawable/d_edit"
                     android:padding="10dp"/>
         </RelativeLayout>
 
@@ -166,7 +166,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/add"
+                    android:src="@drawable/d_add"
                     android:padding="10dp"/>
         </RelativeLayout>
 

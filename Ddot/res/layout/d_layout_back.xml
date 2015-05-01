@@ -23,7 +23,7 @@
             android:layout_centerVertical="true"
             android:id="@+id/btnBack"
             android:onClick="onClick"
-            android:src="@drawable/back_btn"
+            android:src="@drawable/d_back_btn"
             android:scaleType="fitCenter"
             android:padding="10dp"/>
 </RelativeLayout>
