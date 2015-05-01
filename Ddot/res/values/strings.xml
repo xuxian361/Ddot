@@ -27,4 +27,12 @@
     <string name="bookmark">收藏</string>
     <string name="share">分享</string>
     <string name="free_order">免费预约</string>
+    <string name="phone_brand">手机品牌</string>
+    <string name="phone_model">手机型号</string>
+    <string name="phone_parts">手机部件</string>
+    <string name="fix_parts">维修部件</string>
+    <string name="store_address">商家位置</string>
+    <string name="provide_visit">提供上门\n服务？</string>
+    <string name="provide_detection">需要故障\n检测？</string>
+    <string name="sort">排序</string>
 </resources>
