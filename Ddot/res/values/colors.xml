@@ -30,5 +30,6 @@
 
     <color name="d_chatLeftText">#000</color>
     <color name="d_red">#f00</color>
+    <color name="gorden">#f2af2d</color>
 
 </resources>

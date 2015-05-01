@@ -35,4 +35,6 @@
     <string name="provide_visit">提供上门\n服务？</string>
     <string name="provide_detection">需要故障\n检测？</string>
     <string name="sort">排序</string>
+    <string name="go">GO</string>
+    <string name="filter">筛选更多</string>
 </resources>

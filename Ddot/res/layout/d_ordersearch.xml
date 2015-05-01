@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/d_common_blue">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btn_delete"
+                android:layout_marginLeft="15dp" android:layout_marginRight="-5dp">
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edt_search"
+                    android:background="@null"
+                    android:layout_above="@+id/txt_search_bottom" android:layout_alignLeft="@+id/txt_search_bottom"
+                    android:layout_marginBottom="3dp"
+                    android:hint="HTC"
+                    android:textColorHint="@color/d_white" android:maxLines="1"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/txt_search_bottom"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/d_white"/>
+        </RelativeLayout>
+        <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_delete"
+                android:src="@drawable/search_in"
+                android:scaleType="center"
+                android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp">
+            <Button
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:text="@string/go"
+                    android:id="@+id/btn_go"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/corner_all_orange"
+                    android:textColor="@color/d_white"/>
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_toLeftOf="@+id/btn_go"
+                    android:layout_alignBottom="@+id/btn_go"
+                    android:layout_alignTop="@+id/btn_go"
+                    android:layout_marginRight="5dp"
+                    android:scrollbars="none">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                    <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:text="@string/phone_brand"
+                            android:id="@+id/btn_brand"
+                            android:textSize="10dp"
+                            android:background="@drawable/corner_stroke_all_white"/>
+                    <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:text="@string/phone_model"
+                            android:id="@+id/btn_model"
+                            android:textSize="10dp"
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                    <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:text="@string/fix_parts"
+                            android:id="@+id/btn_parts"
+                            android:textSize="10dp"
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                    <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:text="@string/store_address"
+                            android:id="@+id/btn_store_address"
+                            android:textSize="10dp"
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+
+                    <Button
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:text="@string/filter"
+                            android:id="@+id/btn_search_more"
+                            android:textSize="10dp"
+                            android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
