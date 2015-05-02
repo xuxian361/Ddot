@@ -11,15 +11,16 @@
             android:background="@color/d_common_blue">
 
         <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:background="@null"
                 android:layout_centerVertical="true"
                 android:id="@+id/btn_setting"
                 android:src="@drawable/icon_settings"
-                android:scaleType="fitCenter"
+                android:scaleType="center"
                 android:padding="10dp"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                />
     </RelativeLayout>
     <RelativeLayout
             android:layout_width="match_parent"

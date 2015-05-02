@@ -63,24 +63,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp" android:padding="3dp" android:id="@+id/relative_filter">
             <Button
                     android:layout_width="40dp"
-                    android:layout_height="30dp"
+                    android:layout_height="28dp"
                     android:text="@string/go"
                     android:id="@+id/btn_go"
                     android:layout_alignParentRight="true"
                     android:background="@drawable/corner_all_orange"
-                    android:textColor="@color/d_white"/>
+                    android:textColor="@color/d_white" android:layout_centerVertical="true"/>
             <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/horizontalScrollView"
                     android:layout_toLeftOf="@+id/btn_go"
-                    android:layout_alignBottom="@+id/btn_go"
-                    android:layout_alignTop="@+id/btn_go"
                     android:layout_marginRight="5dp"
-                    android:scrollbars="none">
+                    android:scrollbars="none" android:layout_centerVertical="true">
                 <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -117,7 +115,8 @@
                             android:id="@+id/btn_store_address"
                             android:textSize="10dp"
                             android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
-                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"/>
 
                     <Button
                             android:layout_width="wrap_content"
@@ -126,10 +125,25 @@
                             android:id="@+id/btn_search_more"
                             android:textSize="10dp"
                             android:background="@drawable/corner_stroke_all_white" android:layout_marginLeft="3dp"
-                            android:paddingLeft="5dp" android:paddingRight="5dp"/>
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"/>
                 </LinearLayout>
             </HorizontalScrollView>
         </RelativeLayout>
+
+        <com.sundy.Ddot.ui.view.xlist.XListView
+                android:id="@+id/lv_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@drawable/base_horizontal_line"
+                android:dividerHeight="1dp"
+                android:fadingEdgeLength="0dp"
+                android:fastScrollEnabled="true"
+                android:paddingBottom="10dp"
+                android:layout_below="@+id/relative_filter"
+                android:layout_marginTop="10dp"/>
+
     </RelativeLayout>
 
 </LinearLayout>
