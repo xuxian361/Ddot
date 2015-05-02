@@ -1,23 +1,23 @@
 package com.sundy.Ddot.ui.activity;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.nineoldandroids.view.ViewHelper;
+import com.sundy.Ddot.MainViewPagerAdapter;
 import com.sundy.Ddot.R;
+import com.sundy.Ddot.ui.fragment.MeFragment;
+import com.sundy.Ddot.ui.fragment.MessageFragment;
+import com.sundy.Ddot.ui.fragment.OrderSearchFragment;
 import jazzyviewpager.JazzyViewPager;
-import jazzyviewpager.OutlineContainer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +34,8 @@ public class MainActivity extends BaseActivity {
     List<Map<String, View>> tabViews = new ArrayList<Map<String, View>>();
     public TabHost tabHost;
     private int tabCount = 3;
+    private MainViewPagerAdapter adapter;
+    private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
 
     public MainActivity() {
     }
@@ -59,7 +61,19 @@ public class MainActivity extends BaseActivity {
             }
         });
         tabHost.setCurrentTab(0);
+
+        initAdapter();
         initJazzyPager(JazzyViewPager.TransitionEffect.Standard);
+    }
+
+    private void initAdapter() {
+        MessageFragment msgFragment = new MessageFragment();
+        OrderSearchFragment searchFragment = new OrderSearchFragment();
+        MeFragment meFragment = new MeFragment();
+        fragmentList.add(msgFragment);
+        fragmentList.add(searchFragment);
+        fragmentList.add(meFragment);
+        adapter = new MainViewPagerAdapter(getSupportFragmentManager(), fragmentList);
     }
 
     /**
@@ -128,8 +142,7 @@ public class MainActivity extends BaseActivity {
 
     private void initJazzyPager(JazzyViewPager.TransitionEffect effect) {
         jazzyPager.setTransitionEffect(effect);
-        jazzyPager.setAdapter(new MainAdapter());
-        jazzyPager.setPageMargin(30);
+        jazzyPager.setAdapter(adapter);
         jazzyPager.setFadeEnabled(true);
         jazzyPager.setSlideCallBack(new JazzyViewPager.SlideCallback() {
             @Override
@@ -143,6 +156,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 tabHost.setCurrentTab(position);
+//                LogUtils.d("---------->position = " + position);
             }
 
             @Override
@@ -153,42 +167,6 @@ public class MainActivity extends BaseActivity {
             public void onPageScrollStateChanged(int paramInt) {
             }
         });
-    }
-
-    private class MainAdapter extends PagerAdapter {
-        @Override
-        public Object instantiateItem(ViewGroup container, final int position) {
-            TextView text = new TextView(MainActivity.this);
-            text.setGravity(Gravity.CENTER);
-            text.setTextSize(30);
-            text.setTextColor(Color.WHITE);
-            text.setText("Page " + position);
-            text.setPadding(30, 30, 30, 30);
-            int bg = Color.rgb((int) Math.floor(Math.random() * 128) + 64, (int) Math.floor(Math.random() * 128) + 64, (int) Math.floor(Math.random() * 128) + 64);
-            text.setBackgroundColor(bg);
-            container.addView(text, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            jazzyPager.setObjectForPosition(text, position);
-            return text;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object obj) {
-            container.removeView(jazzyPager.findViewFromObject(position));
-        }
-
-        @Override
-        public int getCount() {
-            return tabCount;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object obj) {
-            if (view instanceof OutlineContainer) {
-                return ((OutlineContainer) view).getChildAt(0) == obj;
-            } else {
-                return view == obj;
-            }
-        }
     }
 
 }
