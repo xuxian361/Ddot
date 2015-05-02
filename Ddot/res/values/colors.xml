@@ -40,7 +40,7 @@
     <color name="transparent4">#bb000000</color>
     <color name="transparent5">#8000</color>
     <color name="transparent3">#00000000</color>
-
+    <color name="holo_blue">#FF33E5B5</color>
 
 
 </resources>

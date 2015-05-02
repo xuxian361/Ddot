@@ -1,7 +1,8 @@
-package com.sundy.Ddot;
+package com.sundy.Ddot.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.sundy.Ddot.R;
 
 public class LoadingActivity extends Activity {
     /**
