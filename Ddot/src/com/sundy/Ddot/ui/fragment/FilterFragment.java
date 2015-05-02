@@ -1,35 +1,29 @@
 package com.sundy.Ddot.ui.fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import com.sundy.Ddot.R;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by sundy on 15/5/2.
  */
-public class MessageFragment extends BaseFragment {
+public class FilterFragment extends BaseFragment {
 
-    private final String TAG = "MessageFragment";
+    private final String TAG = "FilterFragment";
     private View v;
     private JSONObject current_item;
     private ArrayList<String> images = new ArrayList<String>();
 
-    public MessageFragment() {
+    public FilterFragment() {
     }
 
-    public MessageFragment(JSONObject current_item) {
+    public FilterFragment(JSONObject current_item) {
         this.current_item = current_item;
     }
 
@@ -40,7 +34,7 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.d_message, container, false);
+        v = inflater.inflate(R.layout.d_more_filter, container, false);
 
         init();
 

@@ -3,7 +3,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@color/d_base_bg"
+              android:id="@+id/linear_all">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -24,7 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/btn_delete"
-                android:layout_marginRight="-5dp" android:layout_toRightOf="@+id/btn_scan">
+                android:layout_marginRight="-5dp"
+                android:layout_toRightOf="@+id/btn_scan">
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

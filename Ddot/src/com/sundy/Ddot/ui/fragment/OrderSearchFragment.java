@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * Created by sundy on 15/5/2.
  */
-public class OrderSearchFragment extends Fragment {
+public class OrderSearchFragment extends BaseFragment {
 
     private final String TAG = "OrderSearchFragment";
     private View v;
