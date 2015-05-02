@@ -38,6 +38,7 @@ public class SettingsFragment extends BaseFragment {
     }
 
     private void init() {
+        aq.id(R.id.txt_header_title).text(getString(R.string.settings));
         aq.id(R.id.btnBack).clicked(onClick);
         aq.id(R.id.linear_all).clicked(onClick);
 

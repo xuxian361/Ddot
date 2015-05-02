@@ -36,6 +36,8 @@ public class MeFragment extends BaseFragment {
 
     private void init() {
         aq.id(R.id.btn_setting).clicked(onClick);
+        aq.id(R.id.relative_info).clicked(onClick);
+        aq.id(R.id.relative_bookmark).clicked(onClick);
     }
 
     private View.OnClickListener onClick = new View.OnClickListener() {
@@ -44,6 +46,12 @@ public class MeFragment extends BaseFragment {
             switch (view.getId()) {
                 case R.id.btn_setting:
                     addContent(new SettingsFragment());
+                    break;
+                case R.id.relative_info:
+                    addContent(new MyInfoFragment());
+                    break;
+                case R.id.relative_bookmark:
+                    addContent(new BookmarkFragment());
                     break;
             }
         }

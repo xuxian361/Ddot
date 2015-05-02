@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.androidquery.AQuery;
 import com.sundy.Ddot.R;
 import org.json.JSONObject;
 
@@ -36,14 +37,27 @@ public class MyInfoFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.d_myinfo_detail, container, false);
 
+        aq = new AQuery(v);
         init();
 
         return v;
     }
 
     private void init() {
-
+        aq.id(R.id.btnBack).clicked(onClick);
+        aq.id(R.id.linear_all).clicked(onClick);
     }
+
+    private View.OnClickListener onClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btnBack:
+                    onBackPressed();
+                    break;
+            }
+        }
+    };
 
     @Override
     public void onResume() {

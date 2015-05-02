@@ -1,5 +1,6 @@
 package com.sundy.Ddot.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -56,6 +57,9 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onTabChanged(String tabId) {
                 int index = Integer.parseInt(tabId);
+                if (index == 2) {
+                    return;
+                }
                 setTabSelectedState(index, tabCount);
                 tabHost.getTabContentView().setVisibility(View.GONE);// 隐藏content
             }
@@ -64,6 +68,11 @@ public class MainActivity extends BaseActivity {
 
         initAdapter();
         initJazzyPager(JazzyViewPager.TransitionEffect.Standard);
+    }
+
+    private void goLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     private void initAdapter() {
@@ -76,13 +85,40 @@ public class MainActivity extends BaseActivity {
         adapter = new MainViewPagerAdapter(getSupportFragmentManager(), fragmentList);
     }
 
-    /**
-     * 动态创建 TabWidget 的Tab项,并设置normalLayout的alpha为1，selectedLayout的alpha为0[显示normal，隐藏selected]
-     *
-     * @param tabLabelText
-     * @param tabIndex
-     * @return
-     */
+    private void initJazzyPager(JazzyViewPager.TransitionEffect effect) {
+        jazzyPager.setTransitionEffect(effect);
+        jazzyPager.setAdapter(adapter);
+        jazzyPager.setFadeEnabled(true);
+        jazzyPager.setSlideCallBack(new JazzyViewPager.SlideCallback() {
+            @Override
+            public void callBack(int position, float positionOffset) {
+                Map<String, View> map = tabViews.get(position);
+                ViewHelper.setAlpha(map.get("selected"), positionOffset);
+                ViewHelper.setAlpha(map.get("normal"), 1 - positionOffset);
+            }
+        });
+        jazzyPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 2) {
+                    LogUtils.d("---------->position = " + position);
+                    goLogin();
+                    return;
+                }
+                tabHost.setCurrentTab(position);
+
+            }
+
+            @Override
+            public void onPageScrolled(int paramInt1, float paramFloat, int paramInt2) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int paramInt) {
+            }
+        });
+    }
+
     private View createTab(String tabLabelText, int tabIndex) {
         View tabIndicator = LayoutInflater.from(this).inflate(R.layout.main_tabwidget_layout, null);
         TextView normalTV = (TextView) tabIndicator.findViewById(R.id.normalTV);
@@ -116,11 +152,6 @@ public class MainActivity extends BaseActivity {
         return tabIndicator;
     }
 
-    /**
-     * 设置tab状态选中
-     *
-     * @param index
-     */
     private void setTabSelectedState(int index, int tabCount) {
         for (int i = 0; i < tabCount; i++) {
             if (i == index) {
@@ -138,35 +169,6 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         setTabSelectedState(tabHost.getCurrentTab(), tabCount);
-    }
-
-    private void initJazzyPager(JazzyViewPager.TransitionEffect effect) {
-        jazzyPager.setTransitionEffect(effect);
-        jazzyPager.setAdapter(adapter);
-        jazzyPager.setFadeEnabled(true);
-        jazzyPager.setSlideCallBack(new JazzyViewPager.SlideCallback() {
-            @Override
-            public void callBack(int position, float positionOffset) {
-                Map<String, View> map = tabViews.get(position);
-                ViewHelper.setAlpha(map.get("selected"), positionOffset);
-                ViewHelper.setAlpha(map.get("normal"), 1 - positionOffset);
-            }
-        });
-        jazzyPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                tabHost.setCurrentTab(position);
-//                LogUtils.d("---------->position = " + position);
-            }
-
-            @Override
-            public void onPageScrolled(int paramInt1, float paramFloat, int paramInt2) {
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int paramInt) {
-            }
-        });
     }
 
 
