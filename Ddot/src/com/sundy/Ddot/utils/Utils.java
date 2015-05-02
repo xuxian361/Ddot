@@ -11,6 +11,9 @@ import android.view.inputmethod.InputMethodManager;
  */
 public class Utils {
 
+    public static final String APP_NAME = "Ddot";
+    public static final String isLogined = "isLogined";
+
     public static void hideSoftInputView(Activity activity) {
         if (activity.getWindow().getAttributes().softInputMode !=
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN) {

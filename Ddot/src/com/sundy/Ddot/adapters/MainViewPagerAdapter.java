@@ -1,4 +1,4 @@
-package com.sundy.Ddot;
+package com.sundy.Ddot.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

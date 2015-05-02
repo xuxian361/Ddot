@@ -1,6 +1,8 @@
 package com.sundy.Ddot.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,14 +12,14 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.nineoldandroids.view.ViewHelper;
-import com.sundy.Ddot.MainViewPagerAdapter;
+import com.sundy.Ddot.adapters.MainViewPagerAdapter;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.ui.fragment.MeFragment;
 import com.sundy.Ddot.ui.fragment.MessageFragment;
 import com.sundy.Ddot.ui.fragment.OrderSearchFragment;
+import com.sundy.Ddot.utils.Utils;
 import jazzyviewpager.JazzyViewPager;
 
 import java.util.ArrayList;
@@ -57,22 +59,14 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onTabChanged(String tabId) {
                 int index = Integer.parseInt(tabId);
-                if (index == 2) {
-                    return;
-                }
-                setTabSelectedState(index, tabCount);
                 tabHost.getTabContentView().setVisibility(View.GONE);// 隐藏content
+                setTabSelectedState(index, tabCount);
             }
         });
         tabHost.setCurrentTab(0);
 
         initAdapter();
         initJazzyPager(JazzyViewPager.TransitionEffect.Standard);
-    }
-
-    private void goLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
     }
 
     private void initAdapter() {
@@ -101,12 +95,15 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position == 2) {
-                    LogUtils.d("---------->position = " + position);
-                    goLogin();
-                    return;
+                    SharedPreferences preferences = getSharedPreferences(Utils.APP_NAME, Context.MODE_PRIVATE);
+                    String isLogined = preferences.getString(Utils.isLogined, "");
+                    if (isLogined.equals("false") || isLogined.equals("")) {
+                        goLogin();
+                        tabHost.setCurrentTab(0);
+                        return;
+                    }
                 }
                 tabHost.setCurrentTab(position);
-
             }
 
             @Override
@@ -117,6 +114,11 @@ public class MainActivity extends BaseActivity {
             public void onPageScrollStateChanged(int paramInt) {
             }
         });
+    }
+
+    private void goLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     private View createTab(String tabLabelText, int tabIndex) {
