@@ -1,25 +1,17 @@
 package com.sundy.Ddot.adapters;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.androidquery.AQuery;
 import com.sundy.Ddot.R;
+import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -45,9 +37,9 @@ public class StoreListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-//        if (list != null)
-//            return list.size();
-        return 7;
+        if (list != null)
+            return list.size();
+        return 0;
     }
 
     @Override
@@ -78,6 +70,22 @@ public class StoreListAdapter extends BaseAdapter {
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
+        }
+
+        try {
+            JSONObject item = (JSONObject) list.get(i);
+            holder.txt_date.setText(item.getString("release_time"));
+            holder.txt_title.setText(item.getString("title"));
+            holder.txt_store_name.setText(item.getString("store_name"));
+            holder.txt_amount.setText(item.getString("amount"));
+            holder.txt_distance.setText("230米");
+            holder.txt_points.setText(item.getString("rating") + "分 " + item.getString("comment_count") + "评");
+
+            AQuery img_aq = new AQuery(holder.img_store);
+            img_aq.image(item.getString("store_img"));
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return view;

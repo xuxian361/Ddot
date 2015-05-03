@@ -145,7 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:divider="@null"
-                        app:dividerWidth="14dp"
+                        app:dividerWidth="1dp"
                         android:fadingEdge="none"
                         android:layout_below="@+id/relative_hot_restaurant"
                         />

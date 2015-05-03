@@ -12,6 +12,8 @@ import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.StoreListAdapter;
 import com.sundy.Ddot.ui.view.xlist.XListView;
 import com.sundy.Ddot.utils.Utils;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class OrderSearchFragment extends BaseFragment {
     private boolean isRefreshing = false;
     private List list = new ArrayList();
 
+
     public OrderSearchFragment() {
     }
 
@@ -46,7 +49,6 @@ public class OrderSearchFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LogUtils.d("OrderSearchFragment--------------->onCreateView");
         v = inflater.inflate(R.layout.d_ordersearch, container, false);
-
         aq = new AQuery(v);
         init();
 
@@ -58,9 +60,9 @@ public class OrderSearchFragment extends BaseFragment {
 
         last_updated_time = getString(R.string.just_now);
         lv_search = (XListView) aq.id(R.id.lv_search).getView();
-        adapter = new StoreListAdapter();
+        adapter = new StoreListAdapter(getActivity(), getActivity().getLayoutInflater());
         lv_search.setAdapter(adapter);
-        lv_search.setOnItemClickListener((AdapterView.OnItemClickListener) adapter);
+        lv_search.setOnItemClickListener(onItemClickListener);
         lv_search.setPullLoadEnable(true);
         lv_search.setPullRefreshEnable(true);
         lv_search.setXListViewListener(ixListViewListener);
@@ -106,8 +108,144 @@ public class OrderSearchFragment extends BaseFragment {
         }
     };
 
+    private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            if (list != null && list.size() != 0) {
+                JSONObject item = (JSONObject) list.get(i);
+                if (item != null) {
+                    addContent(new StoreInfoFragment(item));
+                }
+            }
+        }
+    };
+
     private void getStores() {
-        
+        String str = new String("{\n" +
+                "    \"Result\": 0, \n" +
+                "    \"FF\": [\n" +
+                "        {\n" +
+                "            \"store_id\": \"12\", \n" +
+                "            \"store_name\": \"HTC服务正佳店\", \n" +
+                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
+                "            \"longitude\": \"114.356738\", \n" +
+                "            \"latitude\": \"23.676348\", \n" +
+                "            \"store_phone\": \"0752-28791990\", \n" +
+                "            \"store_info\": \"广州市天河区体育中心正佳M层HTC旗舰维修点是......\", \n" +
+                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "            \"title\": \"HTC One系列免费换膜！！\", \n" +
+                "            \"amount\": \"200\", \n" +
+                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
+                "            \"check_count\": \"1723\", \n" +
+                "            \"booking_count\": \"230\", \n" +
+                "            \"rating\": \"4.2\", \n" +
+                "            \"comment_name\": \"135****6578\", \n" +
+                "            \"comment_count\": \"239\", \n" +
+                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
+                "            \"images\": [\n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            ]\n" +
+                "        }, \n" +
+                "        {\n" +
+                "            \"store_id\": \"12\", \n" +
+                "            \"store_name\": \"HTC服务正佳店\", \n" +
+                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
+                "            \"longitude\": \"114.356738\", \n" +
+                "            \"latitude\": \"23.676348\", \n" +
+                "            \"store_phone\": \"0752-28791990\", \n" +
+                "            \"store_info\": \"广州市天河区体育中心正佳M层HTC旗舰维修点是......\", \n" +
+                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "            \"title\": \"HTC One系列免费换膜！！\", \n" +
+                "            \"amount\": \"200\", \n" +
+                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
+                "            \"check_count\": \"1723\", \n" +
+                "            \"booking_count\": \"230\", \n" +
+                "            \"rating\": \"4.2\", \n" +
+                "            \"comment_name\": \"135****6578\", \n" +
+                "            \"comment_count\": \"239\", \n" +
+                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
+                "            \"images\": [\n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            ]\n" +
+                "        }, \n" +
+                "        {\n" +
+                "            \"store_id\": \"12\", \n" +
+                "            \"store_name\": \"HTC服务正佳店\", \n" +
+                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
+                "            \"longitude\": \"114.356738\", \n" +
+                "            \"latitude\": \"23.676348\", \n" +
+                "            \"store_phone\": \"0752-28791990\", \n" +
+                "            \"store_info\": \"广州市天河区体育中心正佳M层HTC旗舰维修点是......\", \n" +
+                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "            \"title\": \"HTC One系列免费换膜！！\", \n" +
+                "            \"amount\": \"200\", \n" +
+                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
+                "            \"check_count\": \"1723\", \n" +
+                "            \"booking_count\": \"230\", \n" +
+                "            \"rating\": \"4.2\", \n" +
+                "            \"comment_name\": \"135****6578\", \n" +
+                "            \"comment_count\": \"239\", \n" +
+                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
+                "            \"images\": [\n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            ]\n" +
+                "        }, \n" +
+                "        {\n" +
+                "            \"store_id\": \"12\", \n" +
+                "            \"store_name\": \"HTC服务正佳店\", \n" +
+                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
+                "            \"longitude\": \"114.356738\", \n" +
+                "            \"latitude\": \"23.676348\", \n" +
+                "            \"store_phone\": \"0752-28791990\", \n" +
+                "            \"store_info\": \"广州市天河区体育中心正佳M层HTC旗舰维修点是......\", \n" +
+                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "            \"title\": \"HTC One系列免费换膜！！\", \n" +
+                "            \"amount\": \"200\", \n" +
+                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
+                "            \"check_count\": \"1723\", \n" +
+                "            \"booking_count\": \"230\", \n" +
+                "            \"rating\": \"4.2\", \n" +
+                "            \"comment_name\": \"135****6578\", \n" +
+                "            \"comment_count\": \"239\", \n" +
+                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
+                "            \"images\": [\n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            ]\n" +
+                "        }\n" +
+                "    ], \n" +
+                "    \"Message\": \"Success\"\n" +
+                "}");
+        try {
+            JSONObject object = new JSONObject(str);
+            if (object.has("FF")) {
+                JSONArray FF = object.getJSONArray("FF");
+                if (FF != null) {
+                    if (FF.length() != 0) {
+                        for (int i = 0; i < FF.length(); i++) {
+                            JSONObject item = (JSONObject) FF.get(i);
+                            list.add(item);
+                        }
+                    }
+                }
+            }
+            LogUtils.d("------>size = " + list.size());
+            adapter.setData(list);
+            adapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     private View.OnClickListener onClick = new View.OnClickListener() {

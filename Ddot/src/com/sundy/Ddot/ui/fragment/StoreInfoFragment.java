@@ -5,10 +5,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.androidquery.AQuery;
+import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
+import com.sundy.Ddot.adapters.ImagaHListAdapter;
+import it.sephiroth.android.library.widget.HListView;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sundy on 15/5/2.
@@ -18,7 +25,8 @@ public class StoreInfoFragment extends BaseFragment {
     private final String TAG = "StoreInfoFragment";
     private View v;
     private JSONObject current_item;
-    private ArrayList<String> images = new ArrayList<String>();
+    private HListView lv_imgs;
+    private ImagaHListAdapter adapter;
 
     public StoreInfoFragment() {
     }
@@ -36,14 +44,51 @@ public class StoreInfoFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.d_store_detail, container, false);
 
+        aq = new AQuery(v);
         init();
 
         return v;
     }
 
     private void init() {
+        aq.id(R.id.btnBack).clicked(onClick);
+        aq.id(R.id.linear_all).clicked(onClick);
+        aq.id(R.id.linear_bookmark).clicked(onClick);
+
+        lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
+        adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
+        lv_imgs.setAdapter(adapter);
+
+        try {
+            List<String> images = new ArrayList<String>();
+            JSONArray imgs = current_item.getJSONArray("images");
+            if (imgs != null && imgs.length() != 0) {
+                for (int i = 0; i < imgs.length(); i++) {
+                    images.add((String) imgs.get(i));
+                }
+            }
+
+            adapter.setData(images);
+            adapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
+
+    private View.OnClickListener onClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btnBack:
+                    onBackPressed();
+                    break;
+                case R.id.linear_bookmark:
+
+                    break;
+            }
+        }
+    };
 
     @Override
     public void onResume() {
