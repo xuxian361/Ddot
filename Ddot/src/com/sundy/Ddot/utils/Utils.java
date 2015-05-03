@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by sundy on 15/5/2.
  */
@@ -24,5 +27,18 @@ public class Utils {
                         InputMethodManager.HIDE_NOT_ALWAYS);
             }
         }
+    }
+
+    public static String getLastUpdatedTime() {
+        String str = null;
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+            //获取当前时间
+            Date curDate = new Date(System.currentTimeMillis());
+            str = formatter.format(curDate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return str;
     }
 }

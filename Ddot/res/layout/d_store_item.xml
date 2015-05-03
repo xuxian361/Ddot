@@ -55,7 +55,9 @@
                 android:layout_height="wrap_content"
                 android:text="4.2分  1983评"
                 android:id="@+id/txt_points"
-                android:textSize="12dp" android:layout_alignParentBottom="true" android:layout_marginBottom="5dp"/>
+                android:textSize="12dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"/>
     </RelativeLayout>
     <RelativeLayout
             android:layout_width="80dp"
@@ -81,7 +83,7 @@
                 android:textSize="12dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="3dp"/>
-        <ImageButton
+        <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:id="@+id/btn_contact"

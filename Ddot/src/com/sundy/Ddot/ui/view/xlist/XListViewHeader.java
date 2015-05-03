@@ -10,25 +10,34 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import com.sundy.Ddot.R;
 
 public class XListViewHeader extends LinearLayout {
-    public final static int STATE_NORMAL = 0;
-    private int mState = STATE_NORMAL;
-    public final static int STATE_READY = 1;
-    public final static int STATE_REFRESHING = 2;
-    private final int ROTATE_ANIM_DURATION = 180;
     private LinearLayout mContainer;
     private ImageView mArrowImageView;
     private ProgressBar mProgressBar;
+    private TextView mHintTextView;
+    private int mState = STATE_NORMAL;
+
     private Animation mRotateUpAnim;
     private Animation mRotateDownAnim;
+
+    private final int ROTATE_ANIM_DURATION = 180;
+
+    public final static int STATE_NORMAL = 0;
+    public final static int STATE_READY = 1;
+    public final static int STATE_REFRESHING = 2;
 
     public XListViewHeader(Context context) {
         super(context);
         initView(context);
     }
 
+    /**
+     * @param context
+     * @param attrs
+     */
     public XListViewHeader(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(context);
@@ -37,13 +46,14 @@ public class XListViewHeader extends LinearLayout {
     private void initView(Context context) {
         // 初始情况，设置下拉刷新view高度为0
         LayoutParams lp = new LayoutParams(
-                android.view.ViewGroup.LayoutParams.MATCH_PARENT, 0);
+                LayoutParams.FILL_PARENT, 0);
         mContainer = (LinearLayout) LayoutInflater.from(context).inflate(
                 R.layout.xlistview_header, null);
         addView(mContainer, lp);
         setGravity(Gravity.BOTTOM);
 
         mArrowImageView = (ImageView) findViewById(R.id.xlistview_header_arrow);
+        mHintTextView = (TextView) findViewById(R.id.xlistview_header_hint_textview);
         mProgressBar = (ProgressBar) findViewById(R.id.xlistview_header_progressbar);
 
         mRotateUpAnim = new RotateAnimation(0.0f, -180.0f,
@@ -61,11 +71,11 @@ public class XListViewHeader extends LinearLayout {
     public void setState(int state) {
         if (state == mState) return;
 
-        if (state == STATE_REFRESHING) {  // 显示进度
+        if (state == STATE_REFRESHING) {    // 显示进度
             mArrowImageView.clearAnimation();
             mArrowImageView.setVisibility(View.INVISIBLE);
             mProgressBar.setVisibility(View.VISIBLE);
-        } else {  // 显示箭头图片
+        } else {    // 显示箭头图片
             mArrowImageView.setVisibility(View.VISIBLE);
             mProgressBar.setVisibility(View.INVISIBLE);
         }
@@ -78,23 +88,22 @@ public class XListViewHeader extends LinearLayout {
                 if (mState == STATE_REFRESHING) {
                     mArrowImageView.clearAnimation();
                 }
+                mHintTextView.setText(R.string.xlistview_header_hint_normal);
                 break;
             case STATE_READY:
                 if (mState != STATE_READY) {
                     mArrowImageView.clearAnimation();
                     mArrowImageView.startAnimation(mRotateUpAnim);
+                    mHintTextView.setText(R.string.xlistview_header_hint_ready);
                 }
                 break;
             case STATE_REFRESHING:
+                mHintTextView.setText(R.string.xlistview_header_hint_loading);
                 break;
             default:
         }
 
         mState = state;
-    }
-
-    public int getVisiableHeight() {
-        return mContainer.getHeight();
     }
 
     public void setVisiableHeight(int height) {
@@ -104,6 +113,10 @@ public class XListViewHeader extends LinearLayout {
                 .getLayoutParams();
         lp.height = height;
         mContainer.setLayoutParams(lp);
+    }
+
+    public int getVisiableHeight() {
+        return mContainer.getHeight();
     }
 
 }
