@@ -24,16 +24,18 @@
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edt_height"
-                    android:id="@+id/editText2"
+                    android:id="@+id/edt_phone"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/phone_num"/>
+                    android:hint="@string/phone_num" android:background="@drawable/edt_bg" android:padding="5dp"
+                    android:textSize="14dp"/>
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edt_height"
-                    android:id="@+id/editText3"
-                    android:layout_marginTop="5dp"
-                    android:hint="@string/hint_password"/>
+                    android:id="@+id/edt_pwd"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/hint_password" android:background="@drawable/edt_bg" android:padding="5dp"
+                    android:textSize="14dp"/>
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

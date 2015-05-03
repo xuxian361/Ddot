@@ -25,14 +25,14 @@ public class MeFragment extends BaseFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        LogUtils.d("----------->onCreate");
+        LogUtils.d("MeFragment--------------->onCreate");
         super.onCreate(savedInstanceState);
         ViewUtils.inject(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        LogUtils.d("----------->onCreateView");
+        LogUtils.d("MeFragment--------------->onCreateView");
         v = inflater.inflate(R.layout.d_myinfo, container, false);
         aq = new AQuery(v);
 
@@ -78,27 +78,31 @@ public class MeFragment extends BaseFragment {
 
     @Override
     public void onResume() {
-        LogUtils.d("----------->onResume");
+        LogUtils.d("MeFragment--------------->onResume");
         super.onResume();
     }
 
     @Override
     public void onPause() {
+        LogUtils.d("MeFragment--------------->onPause");
         super.onPause();
     }
 
     @Override
     public void onStop() {
+        LogUtils.d("MeFragment--------------->onStop");
         super.onStop();
     }
 
     @Override
     public void onDestroyView() {
+        LogUtils.d("MeFragment--------------->onDestroyView");
         super.onDestroyView();
     }
 
     @Override
     public void onDestroy() {
+        LogUtils.d("MeFragment--------------->onDestroy");
         super.onDestroy();
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,11 +36,13 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        LogUtils.d("MessageFragment--------------->onCreate");
         super.onCreate(savedInstanceState);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        LogUtils.d("MessageFragment--------------->onCreateView");
         v = inflater.inflate(R.layout.d_message, container, false);
 
         init();
@@ -53,26 +56,31 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     public void onResume() {
+        LogUtils.d("MessageFragment--------------->onResume");
         super.onResume();
     }
 
     @Override
     public void onPause() {
+        LogUtils.d("MessageFragment--------------->onPause");
         super.onPause();
     }
 
     @Override
     public void onStop() {
+        LogUtils.d("MessageFragment--------------->onStop");
         super.onStop();
     }
 
     @Override
     public void onDestroyView() {
+        LogUtils.d("MessageFragment--------------->onDestroyView");
         super.onDestroyView();
     }
 
     @Override
     public void onDestroy() {
+        LogUtils.d("MessageFragment--------------->onDestroy");
         super.onDestroy();
     }
 }
