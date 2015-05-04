@@ -26,13 +26,14 @@
                     android:layout_height="wrap_content"
                     android:text="@string/push_notify"
                     android:layout_centerVertical="true"/>
-            <Switch
+            <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/btn_height_1"
-                    android:id="@+id/switch1"
+                    android:id="@+id/checkbox_push"
                     android:checked="true"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    style="@style/CustomCheckboxTheme" />
         </RelativeLayout>
         <TextView
                 android:layout_width="match_parent"
@@ -69,7 +70,8 @@
                 android:layout_below="@+id/txt_help_line"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
-                android:paddingBottom="5dp" android:id="@+id/linear_help">
+                android:paddingBottom="5dp"
+                android:id="@+id/linear_help">
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

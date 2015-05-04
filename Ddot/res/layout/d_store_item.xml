@@ -36,7 +36,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_title"
+                android:id="@+id/txt_name"
                 android:layout_marginTop="5dp"
                 android:maxLines="2"
                 />
@@ -46,7 +46,7 @@
                 android:id="@+id/txt_store_name"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:layout_below="@+id/txt_title" android:maxLines="2"/>
+                android:layout_below="@+id/txt_name" android:maxLines="2"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

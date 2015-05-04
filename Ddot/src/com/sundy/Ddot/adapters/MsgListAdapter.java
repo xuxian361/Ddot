@@ -15,18 +15,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sundy on 15/5/3.
+ * Created by sundy on 15/5/4.
  */
-public class StoreListAdapter extends BaseAdapter {
+public class MsgListAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater inflater;
     private List list = new ArrayList();
 
-    public StoreListAdapter() {
+    public MsgListAdapter() {
     }
 
-    public StoreListAdapter(Context context, LayoutInflater inflater) {
+    public MsgListAdapter(Context context, LayoutInflater inflater) {
         this.context = context;
         this.inflater = inflater;
     }
@@ -56,17 +56,13 @@ public class StoreListAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
         if (view == null) {
-            view = inflater.inflate(R.layout.d_store_item, viewGroup, false);
+            view = inflater.inflate(R.layout.d_msg_item, viewGroup, false);
             holder = new ViewHolder();
             AQuery aq = new AQuery(view);
-            holder.txt_title = aq.id(R.id.txt_name).getTextView();
-            holder.txt_store_name = aq.id(R.id.txt_store_name).getTextView();
-            holder.txt_amount = aq.id(R.id.txt_amount).getTextView();
+            holder.txt_name = aq.id(R.id.txt_name).getTextView();
+            holder.txt_content = aq.id(R.id.txt_content).getTextView();
             holder.txt_date = aq.id(R.id.txt_date).getTextView();
-            holder.txt_distance = aq.id(R.id.txt_distance).getTextView();
-            holder.txt_points = aq.id(R.id.txt_points).getTextView();
-            holder.img_store = aq.id(R.id.img_store).getImageView();
-            holder.btn_contact = aq.id(R.id.btn_contact).getImageView();
+            holder.img = aq.id(R.id.img).getImageView();
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
@@ -74,16 +70,23 @@ public class StoreListAdapter extends BaseAdapter {
 
         try {
             JSONObject item = (JSONObject) list.get(i);
-            holder.txt_date.setText(item.getString("release_time"));
-            holder.txt_title.setText(item.getString("title"));
-            holder.txt_store_name.setText(item.getString("store_name"));
-            holder.txt_amount.setText(item.getString("amount"));
-            holder.txt_distance.setText("230米");
-            holder.txt_points.setText(item.getString("rating") + "分 " + item.getString("comment_count") + "评");
+            holder.txt_date.setText(item.getString("msg_date"));
+            holder.txt_name.setText(item.getString("msg_sender"));
+            holder.txt_content.setText(item.getString("msg_content"));
 
-            AQuery img_aq = new AQuery(holder.img_store);
-            img_aq.image(item.getString("store_img"));
+            String imgUrl = item.getString("img");
+            String userImgUrl = item.getString("user_img");
 
+            AQuery img_aq = new AQuery(holder.img);
+
+            String msg_type = item.getString("msg_type");
+            if (msg_type.equals("1")) {
+                img_aq.image(userImgUrl);
+            } else if (msg_type.equals("2")) {
+                img_aq.image(imgUrl);
+            } else if (msg_type.equals("3")) {
+                img_aq.image(imgUrl);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,7 +95,7 @@ public class StoreListAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        TextView txt_title, txt_store_name, txt_amount, txt_date, txt_distance, txt_points;
-        ImageView img_store, btn_contact;
+        TextView txt_name, txt_content, txt_date;
+        ImageView img;
     }
 }

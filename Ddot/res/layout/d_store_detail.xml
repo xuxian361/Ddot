@@ -159,7 +159,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="HTC One系列免费换膜！！"
-                            android:id="@+id/txt_title"
+                            android:id="@+id/txt_name"
                             android:textSize="16dp"/>
                     <TextView
                             android:layout_width="wrap_content"
