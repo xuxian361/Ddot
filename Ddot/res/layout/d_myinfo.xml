@@ -109,10 +109,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:id="@+id/relative_contact">
+                android:id="@+id/relative_show_model">
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="@string/my_contacts"
+                      android:text="@string/show_model"
                       android:layout_centerVertical="true"
                       android:layout_marginLeft="10dp"/>
             <ImageView android:layout_width="15dp"
@@ -127,7 +127,7 @@
         <TextView android:layout_width="match_parent"
                   android:layout_height="1dp"
                   android:background="@color/d_color_bottom_text_normal"
-                  android:layout_below="@+id/relative_contact"
+                  android:layout_below="@+id/relative_show_model"
                   android:layout_marginLeft="5dp"
                   android:layout_marginRight="5dp"/>
         <Button

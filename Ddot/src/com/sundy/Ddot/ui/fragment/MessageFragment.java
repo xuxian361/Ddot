@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import com.androidquery.AQuery;
 import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
 import org.json.JSONException;
@@ -45,14 +46,26 @@ public class MessageFragment extends BaseFragment {
         LogUtils.d("MessageFragment--------------->onCreateView");
         v = inflater.inflate(R.layout.d_message, container, false);
 
+        aq = new AQuery(v);
         init();
 
         return v;
     }
 
     private void init() {
-
+        aq.id(R.id.btn_contact).clicked(onClick);
     }
+
+    private View.OnClickListener onClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btn_contact:
+                    addContent(new ContactFragment());
+                    break;
+            }
+        }
+    };
 
     @Override
     public void onResume() {

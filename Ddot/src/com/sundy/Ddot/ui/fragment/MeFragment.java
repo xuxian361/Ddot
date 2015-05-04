@@ -47,6 +47,7 @@ public class MeFragment extends BaseFragment {
         aq.id(R.id.relative_info).clicked(onClick);
         aq.id(R.id.relative_bookmark).clicked(onClick);
         aq.id(R.id.btn_logout).clicked(onClick);
+        aq.id(R.id.relative_show_model).clicked(onClick);
     }
 
     private View.OnClickListener onClick = new View.OnClickListener() {
@@ -64,6 +65,9 @@ public class MeFragment extends BaseFragment {
                     break;
                 case R.id.btn_logout:
                     logout();
+                    break;
+                case R.id.relative_show_model:
+
                     break;
             }
         }

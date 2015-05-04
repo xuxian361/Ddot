@@ -33,12 +33,12 @@
                     android:id="@+id/linear_client_service">
 
                 <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@null"
                         android:layout_centerVertical="true"
                         android:src="@drawable/d_client_service"
-                        android:scaleType="center"
+                        android:scaleType="fitCenter"
                         android:layout_alignParentRight="true"/>
                 <TextView
                         android:layout_width="wrap_content"
@@ -65,12 +65,12 @@
                     android:layout_toRightOf="@+id/txt_divider_1">
 
                 <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@null"
                         android:layout_centerVertical="true"
                         android:src="@drawable/d_bookmark"
-                        android:scaleType="center"
+                        android:scaleType="fitCenter"
                         android:layout_alignParentRight="true"/>
                 <TextView
                         android:layout_width="wrap_content"
@@ -96,12 +96,12 @@
                     android:layout_toRightOf="@+id/txt_divider_2">
 
                 <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@null"
                         android:layout_centerVertical="true"
                         android:src="@drawable/d_share"
-                        android:scaleType="center"
+                        android:scaleType="fitCenter"
                         android:layout_alignParentRight="true"/>
                 <TextView
                         android:layout_width="wrap_content"

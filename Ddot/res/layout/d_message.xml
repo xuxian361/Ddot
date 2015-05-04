@@ -17,8 +17,8 @@
                 android:layout_height="45dp"
                 android:background="@null"
                 android:layout_centerVertical="true"
-                android:id="@+id/btn_more"
-                android:src="@drawable/d_more"
+                android:id="@+id/btn_contact"
+                android:src="@drawable/icon_contact"
                 android:layout_alignParentRight="true"
                 android:scaleType="center"/>
 
@@ -33,7 +33,6 @@
             android:dividerHeight="1dp"
             android:fadingEdgeLength="0dp"
             android:fastScrollEnabled="true"
-            android:paddingBottom="10dp"
             android:padding="10dp"/>
 
 </LinearLayout>

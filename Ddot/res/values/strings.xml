@@ -65,6 +65,7 @@
     <string name="xlistview_footer_hint_ready">更多信息</string>
     <string name="just_now">刚刚</string>
     <string name="settings">设置</string>
+    <string name="show_model">显示模式</string>
 
 
 </resources>
