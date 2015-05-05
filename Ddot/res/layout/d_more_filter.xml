@@ -56,7 +56,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_brand"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -64,7 +65,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_brand"
                     android:layout_toRightOf="@+id/txt_brand"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -100,7 +101,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_model"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -108,7 +110,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_model"
                     android:layout_toRightOf="@+id/txt_model"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -144,7 +146,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_part"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -152,7 +155,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_part"
                     android:layout_toRightOf="@+id/txt_part"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -188,7 +191,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_address"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -196,7 +200,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_address"
                     android:layout_toRightOf="@+id/txt_address"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -232,7 +236,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_visit"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -240,7 +245,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_visit"
                     android:layout_toRightOf="@+id/txt_visit"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -276,7 +281,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_detection"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -284,7 +290,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_detection"
                     android:layout_toRightOf="@+id/txt_detection"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"
@@ -320,7 +326,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toLeftOf="@+id/img_sort"
                     android:gravity="center"
-                    android:background="@null"/>
+                    android:background="@null"
+                    android:textSize="14sp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -328,7 +335,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toLeftOf="@+id/img_sort"
                     android:layout_toRightOf="@+id/txt_sort"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <ImageButton
                     android:layout_width="30dp"
                     android:layout_height="30dp"

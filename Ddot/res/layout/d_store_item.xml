@@ -46,7 +46,8 @@
                 android:id="@+id/txt_store_name"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:layout_below="@+id/txt_name" android:maxLines="2"/>
+                android:layout_below="@+id/txt_name"
+                android:maxLines="2"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,7 +57,7 @@
                 android:layout_marginBottom="5dp"/>
     </RelativeLayout>
     <RelativeLayout
-            android:layout_width="80dp"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/relative_center"
             android:id="@+id/relative_right"
@@ -64,19 +65,23 @@
             android:layout_alignBottom="@+id/linear_left"
             android:padding="5dp">
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_date"
                 android:textSize="10dp"
-                android:layout_alignParentRight="true" android:maxLines="1"/>
+                android:layout_alignParentRight="true"
+                android:maxLines="1"
+                android:gravity="right"/>
         <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_distance"
                 android:layout_below="@+id/txt_date"
                 android:textSize="12dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="3dp" android:maxLines="1"/>
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:gravity="right"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
@@ -85,11 +90,12 @@
                 android:background="@null"
                 android:src="@drawable/phone_call"
                 android:scaleType="fitCenter"
-                android:layout_alignParentRight="true" android:padding="7dp"/>
+                android:layout_alignParentRight="true"
+                android:padding="7dp"/>
     </RelativeLayout>
     <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/d_base_color_text_gray"/>
+            android:background="@color/d_base_color_line_gray"/>
 </RelativeLayout>

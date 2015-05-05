@@ -23,7 +23,7 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/d_base_color_text_gray"/>
+                    android:background="@color/d_base_color_line_gray"/>
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="60dp"
@@ -191,7 +191,7 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/d_base_color_text_gray"
+                        android:background="@color/d_base_color_line_gray"
                         android:layout_marginTop="5dp"/>
                 <RelativeLayout
                         android:layout_width="match_parent"
@@ -249,7 +249,7 @@
                 </RelativeLayout>
                 <TextView android:layout_width="match_parent"
                           android:layout_height="1dp"
-                          android:background="@color/d_base_color_text_gray"
+                          android:background="@color/d_base_color_line_gray"
                           android:layout_marginTop="5dp"
                         />
                 <TextView
@@ -300,9 +300,10 @@
                             android:layout_height="25dp"
                             android:id="@+id/img_phone"
                             android:src="@drawable/phone_call"
-                            android:scaleType="center"
+                            android:scaleType="fitCenter"
                             android:layout_centerVertical="true"
-                            android:layout_alignParentRight="true"/>
+                            android:layout_alignParentRight="true"
+                            android:padding="2dp"/>
                 </RelativeLayout>
                 <TextView
                         android:layout_width="wrap_content"

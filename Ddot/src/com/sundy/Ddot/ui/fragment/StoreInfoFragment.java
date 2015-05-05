@@ -1,14 +1,17 @@
 package com.sundy.Ddot.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import com.androidquery.AQuery;
 import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.ImagaHListAdapter;
+import com.sundy.Ddot.ui.activity.ImageScaleActivity;
 import it.sephiroth.android.library.widget.HListView;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +30,7 @@ public class StoreInfoFragment extends BaseFragment {
     private JSONObject current_item;
     private HListView lv_imgs;
     private ImagaHListAdapter adapter;
+    private ArrayList<String> images = new ArrayList<String>();
 
     public StoreInfoFragment() {
     }
@@ -58,9 +62,8 @@ public class StoreInfoFragment extends BaseFragment {
         lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
         adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
         lv_imgs.setAdapter(adapter);
-
+        lv_imgs.setOnItemClickListener(onItemClick);
         try {
-            List<String> images = new ArrayList<String>();
             JSONArray imgs = current_item.getJSONArray("images");
             if (imgs != null && imgs.length() != 0) {
                 for (int i = 0; i < imgs.length(); i++) {
@@ -75,6 +78,19 @@ public class StoreInfoFragment extends BaseFragment {
         }
 
     }
+
+    private it.sephiroth.android.library.widget.AdapterView.OnItemClickListener onItemClick = new it.sephiroth.android.library.widget.AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(it.sephiroth.android.library.widget.AdapterView<?> parent, View view, int position, long id) {
+            LogUtils.d("----------->I = " + position);
+            if (images != null && images.size() != 0) {
+                Intent intent = new Intent(getActivity(), ImageScaleActivity.class);
+                intent.putStringArrayListExtra("images", images);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        }
+    };
 
     private View.OnClickListener onClick = new View.OnClickListener() {
         @Override

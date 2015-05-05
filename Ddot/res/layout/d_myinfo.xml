@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:id="@+id/txt_info_divider"
-                android:background="@color/d_color_bottom_text_normal"
+                android:background="@color/d_base_color_line_gray"
                 android:layout_below="@+id/relative_info"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="5dp"
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:id="@+id/txt_bookmark_divider"
-                android:background="@color/d_color_bottom_text_normal"
+                android:background="@color/d_base_color_line_gray"
                 android:layout_below="@+id/relative_bookmark"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
@@ -126,7 +126,7 @@
         </RelativeLayout>
         <TextView android:layout_width="match_parent"
                   android:layout_height="1dp"
-                  android:background="@color/d_color_bottom_text_normal"
+                  android:background="@color/d_base_color_line_gray"
                   android:layout_below="@+id/relative_show_model"
                   android:layout_marginLeft="5dp"
                   android:layout_marginRight="5dp"/>

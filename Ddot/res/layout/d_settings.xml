@@ -43,7 +43,7 @@
                 android:layout_below="@+id/relative_notify"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:background="@color/d_base_color_text_gray"
+                android:background="@color/d_base_color_line_gray"
                 />
         <TextView
                 android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
                   android:layout_below="@+id/txt_help"
                   android:layout_marginLeft="5dp"
                   android:layout_marginRight="5dp"
-                  android:background="@color/d_base_color_text_gray"/>
+                  android:background="@color/d_base_color_line_gray"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                   android:id="@+id/txt_help_bottom_line"
                   android:layout_marginLeft="5dp"
                   android:layout_marginRight="5dp"
-                  android:background="@color/d_base_color_text_gray"
+                  android:background="@color/d_base_color_line_gray"
                   android:layout_below="@+id/linear_help"/>
         <TextView
                 android:layout_width="wrap_content"
