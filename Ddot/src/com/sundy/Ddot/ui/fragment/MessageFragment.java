@@ -113,7 +113,7 @@ public class MessageFragment extends BaseFragment {
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             try {
                 if (list != null && list.size() != 0) {
-                    JSONObject item = (JSONObject) list.get(i);
+                    JSONObject item = (JSONObject) list.get(i - 1);
                     if (item != null) {
                         String msg_type = item.getString("msg_type");
                         if (msg_type.equals("1")) {

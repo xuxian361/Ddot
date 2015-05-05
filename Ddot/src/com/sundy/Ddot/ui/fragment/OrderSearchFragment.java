@@ -112,11 +112,15 @@ public class OrderSearchFragment extends BaseFragment {
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            if (list != null && list.size() != 0) {
-                JSONObject item = (JSONObject) list.get(i);
-                if (item != null) {
-                    addContent(new StoreInfoFragment(item));
+            try {
+                if (list != null && list.size() != 0) {
+                    JSONObject item = (JSONObject) list.get(i - 1);
+                    if (item != null) {
+                        addContent(new StoreInfoFragment(item));
+                    }
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     };
