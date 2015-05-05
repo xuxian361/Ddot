@@ -57,6 +57,7 @@ public class OrderSearchFragment extends BaseFragment {
 
     private void init() {
         aq.id(R.id.btn_search_more).clicked(onClick);
+        aq.id(R.id.btn_scan).clicked(onClick);
 
         last_updated_time = getString(R.string.just_now);
         lv_search = (XListView) aq.id(R.id.lv_search).getView();
@@ -254,6 +255,9 @@ public class OrderSearchFragment extends BaseFragment {
             switch (view.getId()) {
                 case R.id.btn_search_more:
                     addContent(new FilterFragment());
+                    break;
+                case R.id.btn_scan:
+                    addContent(new QRScanerFragment());
                     break;
             }
         }

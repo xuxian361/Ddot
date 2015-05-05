@@ -19,5 +19,6 @@
     <orderEntry type="library" name="android-support-v4" level="project" />
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="android-query-full.0.26.8" level="project" />
+    <orderEntry type="module" module-name="MyQrcode" />
   </component>
 </module>
