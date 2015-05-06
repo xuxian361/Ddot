@@ -117,10 +117,16 @@ public class MessageFragment extends BaseFragment {
                     if (item != null) {
                         String msg_type = item.getString("msg_type");
                         if (msg_type.equals("1")) {
+                            //To do: 跟联系人聊天通讯
 
                         } else if (msg_type.equals("2")) {
+                            //To do: 添加新联系人
 
                         } else if (msg_type.equals("3")) {
+                            //To do: 查看系统推送消息
+
+                        } else if (msg_type.equals("4")) {
+                            //To do: 维修状态查看
 
                         }
                     }
@@ -138,7 +144,7 @@ public class MessageFragment extends BaseFragment {
                 "        {\n" +
                 "            \"msg_id\": \"23\", \n" +
                 "            \"msg_sender\": \"Sundy Xu\", \n" +
-                "            \"msg_content\": \"明天去你店看看\", \n" +
+                "            \"msg_content\": \"明天一起过去天河维修店维修Iphone 4s\", \n" +
                 "            \"msg_date\": \"2015-5-4 12:46:13\", \n" +
                 "            \"img\": \"\", \n" +
                 "            \"user_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
@@ -146,12 +152,12 @@ public class MessageFragment extends BaseFragment {
                 "        }, \n" +
                 "        {\n" +
                 "            \"msg_id\": \"24\", \n" +
-                "            \"msg_sender\": \"Owen\", \n" +
-                "            \"msg_content\": \"差评！！！\", \n" +
+                "            \"msg_sender\": \"Owen 想添加你为联系人\", \n" +
+                "            \"msg_content\": \"我是Owen！！！\", \n" +
                 "            \"msg_date\": \"2015-5-4 12:46:13\", \n" +
                 "            \"img\": \"\", \n" +
                 "            \"user_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "            \"msg_type\": \"1\"\n" +
+                "            \"msg_type\": \"2\"\n" +
                 "        }, \n" +
                 "        {\n" +
                 "            \"msg_id\": \"25\", \n" +
@@ -160,7 +166,7 @@ public class MessageFragment extends BaseFragment {
                 "            \"msg_date\": \"2015-5-4 12:46:13\", \n" +
                 "            \"img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
                 "            \"user_img\": \"\", \n" +
-                "            \"msg_type\": \"2\"\n" +
+                "            \"msg_type\": \"3\"\n" +
                 "        }, \n" +
                 "        {\n" +
                 "            \"msg_id\": \"26\", \n" +
@@ -169,13 +175,15 @@ public class MessageFragment extends BaseFragment {
                 "            \"msg_date\": \"2015-5-4 12:46:13\", \n" +
                 "            \"img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
                 "            \"user_img\": \"\", \n" +
-                "            \"msg_type\": \"3\"\n" +
+                "            \"msg_type\": \"4\"\n" +
                 "        }\n" +
                 "    ], \n" +
                 "    \"Message\": \"Success\"\n" +
                 "}");
         try {
             JSONObject object = new JSONObject(str);
+            LogUtils.d("------->object = " + object.toString());
+
             if (object.has("FF")) {
                 JSONArray FF = object.getJSONArray("FF");
                 if (FF != null) {

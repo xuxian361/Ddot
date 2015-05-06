@@ -72,7 +72,12 @@ public class ContactsListAdapter extends BaseAdapter {
 
             String imgUrl = item.getString("user_img");
             AQuery img_aq = new AQuery(holder.img);
-            img_aq.image(imgUrl);
+            img_aq.image(imgUrl).clicked(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //To do:显示删除好友、发消息、打电话等操作
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

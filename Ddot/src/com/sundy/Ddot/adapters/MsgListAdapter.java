@@ -83,10 +83,13 @@ public class MsgListAdapter extends BaseAdapter {
             if (msg_type.equals("1")) {
                 img_aq.image(userImgUrl);
             } else if (msg_type.equals("2")) {
-                img_aq.image(imgUrl);
+                img_aq.image(userImgUrl);
             } else if (msg_type.equals("3")) {
                 img_aq.image(imgUrl);
+            } else if (msg_type.equals("4")) {
+                img_aq.image(imgUrl);
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

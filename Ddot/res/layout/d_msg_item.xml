@@ -14,7 +14,8 @@
                 android:layout_height="45dp"
                 android:id="@+id/img"
                 android:scaleType="fitXY"
-                android:layout_centerVertical="true" android:layout_marginLeft="5dp"/>
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txt_date"
                 android:layout_alignParentRight="true"
-                android:textSize="10dp" android:layout_margin="5dp"/>
+                android:textSize="10dp"
+                android:layout_margin="5dp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

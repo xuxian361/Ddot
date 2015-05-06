@@ -66,7 +66,7 @@ public class ContactFragment extends BaseFragment {
         lv_contact.setPullLoadEnable(true);
         lv_contact.setPullRefreshEnable(true);
         lv_contact.setXListViewListener(ixListViewListener);
-
+        lv_contact.setOnItemLongClickListener(onItemLongClick);
         if (list != null)
             list.clear();
         getContacts();
@@ -115,12 +115,20 @@ public class ContactFragment extends BaseFragment {
                 if (list != null && list.size() != 0) {
                     JSONObject item = (JSONObject) list.get(i);
                     if (item != null) {
-
+                        //To do: 进行聊天操作
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    };
+
+    private AdapterView.OnItemLongClickListener onItemLongClick = new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+            //To do:显示删除好友、发消息、打电话等操作
+            return false;
         }
     };
 
