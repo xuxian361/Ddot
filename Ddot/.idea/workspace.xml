@@ -129,14 +129,14 @@
       <file leaf-file-name="HelpInfoFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/HelpInfoFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.683871" vertical-offset="252" max-vertical-offset="1734">
-              <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.5407407" vertical-offset="813" max-vertical-offset="2074">
+              <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#703#704#0" expanded="true" />
-                <element signature="e#1727#1903#0" expanded="true" />
-                <element signature="e#1902#1903#0" expanded="true" />
+                <element signature="e#845#846#0" expanded="true" />
+                <element signature="e#877#878#0" expanded="true" />
+                <element signature="e#946#947#0" expanded="true" />
+                <element signature="e#996#997#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -699,7 +699,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31243357" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14665249" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39638683" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940048" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1209,14 +1209,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/HelpInfoFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.683871" vertical-offset="252" max-vertical-offset="1734">
-          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.5407407" vertical-offset="813" max-vertical-offset="2074">
+          <caret line="65" column="54" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#1727#1903#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#877#878#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
           </folding>
         </state>
       </provider>

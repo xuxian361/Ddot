@@ -1,9 +1,13 @@
 package com.sundy.Ddot.ui.fragment;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,6 +26,7 @@ public class HelpInfoFragment extends BaseFragment {
     private View v;
     private int type = 0;
     private WebView webView;
+    private ProgressDialog progressBar;
 
     public HelpInfoFragment() {
     }
@@ -50,6 +55,29 @@ public class HelpInfoFragment extends BaseFragment {
         aq.id(R.id.linear_all).clicked(onClick);
 
         webView = aq.id(R.id.webView).getWebView();
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportZoom(true);
+
+        progressBar = ProgressDialog.show(getActivity(), "", "");
+        progressBar.setCancelable(true);
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                if (progressBar.isShowing()) {
+                    progressBar.dismiss();
+                }
+            }
+        });
+
         if (type == 1) {
             webView.loadUrl("http://www.baidu.com");
         } else if (type == 2) {
@@ -61,16 +89,6 @@ public class HelpInfoFragment extends BaseFragment {
         } else if (type == 5) {
             webView.loadUrl("http://www.imooc.com/");
         }
-
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return true;
-            }
-        });
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
 
     }
 
