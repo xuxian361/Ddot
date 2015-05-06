@@ -1,6 +1,8 @@
 package com.sundy.Ddot.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,11 +86,25 @@ public class StoreListAdapter extends BaseAdapter {
             AQuery img_aq = new AQuery(holder.img_store);
             img_aq.image(item.getString("store_img"));
 
+            holder.btn_contact.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    callPhone();
+                }
+            });
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return view;
+    }
+
+    private void callPhone() {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.CALL");
+        intent.setData(Uri.parse("tel:" + "28791990"));
+        context.startActivity(intent);
     }
 
     class ViewHolder {

@@ -1,6 +1,7 @@
 package com.sundy.Ddot.ui.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -58,6 +59,7 @@ public class StoreInfoFragment extends BaseFragment {
         aq.id(R.id.btnBack).clicked(onClick);
         aq.id(R.id.linear_all).clicked(onClick);
         aq.id(R.id.linear_bookmark).clicked(onClick);
+        aq.id(R.id.img_phone).clicked(onClick);
 
         lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
         adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
@@ -82,7 +84,6 @@ public class StoreInfoFragment extends BaseFragment {
     private it.sephiroth.android.library.widget.AdapterView.OnItemClickListener onItemClick = new it.sephiroth.android.library.widget.AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(it.sephiroth.android.library.widget.AdapterView<?> parent, View view, int position, long id) {
-            LogUtils.d("----------->I = " + position);
             if (images != null && images.size() != 0) {
                 Intent intent = new Intent(getActivity(), ImageScaleActivity.class);
                 intent.putStringArrayListExtra("images", images);
@@ -102,9 +103,19 @@ public class StoreInfoFragment extends BaseFragment {
                 case R.id.linear_bookmark:
 
                     break;
+                case R.id.img_phone:
+                    callPhone();
+                    break;
             }
         }
     };
+
+    private void callPhone() {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.CALL");
+        intent.setData(Uri.parse("tel:" + "28791990"));
+        startActivity(intent);
+    }
 
     @Override
     public void onResume() {
