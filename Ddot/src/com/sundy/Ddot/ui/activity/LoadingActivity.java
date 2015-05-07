@@ -36,7 +36,6 @@ public class LoadingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.d_loading);
 
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
