@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="baidu_map">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/android_api_1.1_forsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/BaiduLBS_Android.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/galaxy_mini.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/libs/armeabi" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

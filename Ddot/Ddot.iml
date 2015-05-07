@@ -21,5 +21,6 @@
     <orderEntry type="library" name="android-query-full.0.26.8" level="project" />
     <orderEntry type="module" module-name="MyQrcode" />
     <orderEntry type="module" module-name="QuickViewPage" />
+    <orderEntry type="library" name="baidu_map" level="project" />
   </component>
 </module>

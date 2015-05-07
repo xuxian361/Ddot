@@ -13,6 +13,7 @@ import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.ImagaHListAdapter;
 import com.sundy.Ddot.ui.activity.ImageScaleActivity;
+import com.sundy.Ddot.ui.activity.StoreMapActivity;
 import it.sephiroth.android.library.widget.HListView;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +61,7 @@ public class StoreInfoFragment extends BaseFragment {
         aq.id(R.id.linear_all).clicked(onClick);
         aq.id(R.id.linear_bookmark).clicked(onClick);
         aq.id(R.id.img_phone).clicked(onClick);
+        aq.id(R.id.img_address).clicked(onClick);
 
         lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
         adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
@@ -106,9 +108,17 @@ public class StoreInfoFragment extends BaseFragment {
                 case R.id.img_phone:
                     callPhone();
                     break;
+                case R.id.img_address:
+                    goMap();
+                    break;
             }
         }
     };
+
+    private void goMap() {
+        Intent intent = new Intent(getActivity(), StoreMapActivity.class);
+        startActivity(intent);
+    }
 
     private void callPhone() {
         Intent intent = new Intent();
