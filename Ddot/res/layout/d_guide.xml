@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+
+
+    <LinearLayout
+            android:id="@+id/ll"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24.0dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:padding="15.0dip"
+                android:src="@drawable/dot" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:padding="15.0dip"
+                android:src="@drawable/dot" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:padding="15.0dip"
+                android:src="@drawable/dot" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:padding="15.0dip"
+                android:src="@drawable/dot" />
+
+    </LinearLayout>
+
+    <Button
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_skip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/skip"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18dp" android:background="@color/d_guide_color"/>
+
+</RelativeLayout>  

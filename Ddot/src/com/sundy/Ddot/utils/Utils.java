@@ -15,6 +15,7 @@ import java.util.Date;
 public class Utils {
 
     public static final String APP_NAME = "Ddot";
+    public static final String isFirstIn_Ddot = "isFirstIn_Ddot";
     public static final String isLogined = "isLogined";
 
     public static void hideSoftInputView(Activity activity) {

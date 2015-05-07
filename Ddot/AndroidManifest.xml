@@ -33,7 +33,11 @@
 
         <activity android:name=".ui.activity.RegisterActivity"
                   android:screenOrientation="portrait"/>
+
         <activity android:name=".ui.activity.ImageScaleActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.GuideActivity"
                   android:screenOrientation="portrait"/>
 
     </application>

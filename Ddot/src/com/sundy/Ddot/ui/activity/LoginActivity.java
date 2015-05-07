@@ -45,6 +45,7 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.btn_login:
                 login();
+                finish();
                 break;
         }
     }
@@ -59,6 +60,7 @@ public class LoginActivity extends BaseActivity {
     private void goRegister() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
+
     }
 
 

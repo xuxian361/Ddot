@@ -42,6 +42,7 @@ public class RegisterActivity extends BaseActivity {
                 break;
             case R.id.btn_Register:
                 register();
+                finish();
                 break;
         }
     }
