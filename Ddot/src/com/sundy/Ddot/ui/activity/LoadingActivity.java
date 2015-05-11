@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import com.sundy.Ddot.R;
+import com.sundy.Ddot.utils.Constant;
 import com.sundy.Ddot.utils.Utils;
 
 public class LoadingActivity extends Activity {
@@ -35,6 +37,12 @@ public class LoadingActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.d_loading);
+
+        //屏幕的信息
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        Constant.SCREEN_WIDTH = metrics.widthPixels;
+        Constant.SCREEN_HEIGHT = metrics.heightPixels;
+        Constant.SCREEN_DENSITY = metrics.density;
 
         new Handler().postDelayed(new Runnable() {
             @Override

@@ -22,5 +22,7 @@
     <orderEntry type="module" module-name="MyQrcode" />
     <orderEntry type="module" module-name="QuickViewPage" />
     <orderEntry type="library" name="baidu_map" level="project" />
+    <orderEntry type="module" module-name="facebook" />
+    <orderEntry type="library" name="libammsdk" level="project" />
   </component>
 </module>

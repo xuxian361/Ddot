@@ -14,12 +14,14 @@ import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.ImagaHListAdapter;
 import com.sundy.Ddot.ui.activity.ImageScaleActivity;
 import com.sundy.Ddot.ui.activity.StoreMapActivity;
+import com.sundy.Ddot.utils.ShareDialog;
 import it.sephiroth.android.library.widget.HListView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -62,6 +64,7 @@ public class StoreInfoFragment extends BaseFragment {
         aq.id(R.id.linear_bookmark).clicked(onClick);
         aq.id(R.id.img_phone).clicked(onClick);
         aq.id(R.id.img_address).clicked(onClick);
+        aq.id(R.id.linear_share).clicked(onClick);
 
         lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
         adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
@@ -111,9 +114,25 @@ public class StoreInfoFragment extends BaseFragment {
                 case R.id.img_address:
                     goMap();
                     break;
+                case R.id.linear_share:
+                    share(view);
+                    break;
             }
         }
     };
+
+    private void share(View view) {
+        try {
+            HashMap<String, String> map = new HashMap<String, String>();
+            map.put("image", "分享图片");
+            map.put("title", "分享标题");
+            map.put("content", "分享内容");
+            map.put("url", "分享URL");
+            new ShareDialog(getActivity(), view, map).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void goMap() {
         Intent intent = new Intent(getActivity(), StoreMapActivity.class);
