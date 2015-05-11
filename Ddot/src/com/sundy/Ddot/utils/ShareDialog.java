@@ -109,9 +109,9 @@ public class ShareDialog {
                     dismiss();
                     ShareControl.shareWithWeChat(mContext, mData);
                     break;
-
                 case R.id.linear_wechat_moments:
                     dismiss();
+                    ShareControl.shareWithWeChat_Moments(mContext, mData);
                     break;
                 case R.id.linear_wechat_favorite:
                     dismiss();
