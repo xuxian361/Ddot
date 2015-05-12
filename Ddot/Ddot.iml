@@ -13,7 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Android 5.0 Google APIs" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="HorizontalVariableListView" />
     <orderEntry type="library" name="android-support-v4" level="project" />
@@ -22,7 +22,7 @@
     <orderEntry type="module" module-name="MyQrcode" />
     <orderEntry type="module" module-name="QuickViewPage" />
     <orderEntry type="library" name="baidu_map" level="project" />
-    <orderEntry type="module" module-name="facebook" />
     <orderEntry type="library" name="libammsdk" level="project" />
+    <orderEntry type="module" module-name="facebook" />
   </component>
 </module>
