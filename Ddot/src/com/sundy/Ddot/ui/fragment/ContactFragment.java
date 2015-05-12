@@ -113,7 +113,7 @@ public class ContactFragment extends BaseFragment {
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             try {
                 if (list != null && list.size() != 0) {
-                    JSONObject item = (JSONObject) list.get(i);
+                    JSONObject item = (JSONObject) list.get(i - 1);
                     if (item != null) {
                         //To do: 进行聊天操作
                     }
@@ -137,23 +137,20 @@ public class ContactFragment extends BaseFragment {
                 "    \"Result\": 0, \n" +
                 "    \"FF\": [\n" +
                 "        {\n" +
-                "            \"user_id\": \"23\", \n" +
-                "            \"user_name\": \"Sundy Xu\", \n" +
-                "            \"user_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            \"id\": \"23\", \n" +
+                "            \"name\": \"Sundy Xu\", \n" +
+                "            \"image\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
+                "            \"qr_code\": \"FJDSI397977FDFE13334FFRJEKJKDJFALEIW\"\n" +
                 "        }, \n" +
                 "        {\n" +
-                "            \"user_id\": \"25\", \n" +
-                "            \"user_name\": \"Owen\", \n" +
-                "            \"user_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
-                "        }, \n" +
-                "        {\n" +
-                "            \"user_id\": \"26\", \n" +
-                "            \"user_name\": \"Leilei\", \n" +
-                "            \"user_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
+                "            \"id\": \"99\", \n" +
+                "            \"name\": \"Leilei\", \n" +
+                "            \"image\": \"http://img6.cache.netease.com/cnews/2015/5/11/201505110752240f45a.jpg\", \n" +
+                "            \"qr_code\": \"FJDSI397977FDFE13334FFRJEKJKDJFALEIW\"\n" +
                 "        }\n" +
                 "    ], \n" +
                 "    \"Message\": \"Success\"\n" +
-                "}");
+                "}\n");
         try {
             JSONObject object = new JSONObject(str);
             if (object.has("FF")) {

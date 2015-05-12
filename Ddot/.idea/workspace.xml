@@ -126,14 +126,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="OrderSearchFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/OrderSearchFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6520681" vertical-offset="460" max-vertical-offset="1309">
-              <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.39319727" vertical-offset="0" max-vertical-offset="4505">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <element signature="e#1395#1413#0" expanded="true" />
-                <element signature="e#1864#1882#0" expanded="true" />
+                <element signature="e#1780#1808#0" expanded="true" />
+                <element signature="e#3394#3929#0" expanded="true" />
+                <element signature="e#3928#3929#0" expanded="true" />
+                <element signature="e#9168#9564#0" expanded="true" />
+                <element signature="e#9563#9564#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,9 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/d_message.xml" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/res/layout/d_contact_item.xml" />
         <option value="$PROJECT_DIR$/res/layout/d_more_filter.xml" />
         <option value="$PROJECT_DIR$/res/layout/d_myinfo.xml" />
         <option value="$PROJECT_DIR$/res/layout/d_ordersearch.xml" />
@@ -181,8 +181,6 @@
         <option value="$PROJECT_DIR$/../MyQrcode/res/values-zh-rTW/strings.xml" />
         <option value="$PROJECT_DIR$/../MyQrcode/res/values-zh-rCN/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/d_msg_item.xml" />
-        <option value="$PROJECT_DIR$/src/com/sundy/Ddot/adapters/ContactsListAdapter.java" />
-        <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/ContactFragment.java" />
         <option value="$PROJECT_DIR$/src/com/sundy/Ddot/adapters/MsgListAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/MessageFragment.java" />
         <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/activity/LoginActivity.java" />
@@ -207,6 +205,11 @@
         <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/activity/LoadingActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../facebook/src/com/facebook/internal/NativeProtocol.java" />
+        <option value="$PROJECT_DIR$/src/com/sundy/Ddot/adapters/ContactsListAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/ContactFragment.java" />
+        <option value="$PROJECT_DIR$/res/layout/d_message.xml" />
+        <option value="$PROJECT_DIR$/res/layout/d_contact.xml" />
+        <option value="$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/OrderSearchFragment.java" />
       </list>
     </option>
   </component>
@@ -214,10 +217,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1294" />
-    <option name="y" value="44" />
-    <option name="width" value="1139" />
-    <option name="height" value="1006" />
+    <option name="x" value="1329" />
+    <option name="y" value="23" />
+    <option name="width" value="1046" />
+    <option name="height" value="1114" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -475,8 +478,8 @@
       <recent name="com.sundy.Ddot.ui.view.xlist" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/com/sundy/Ddot/utils" />
       <recent name="$PROJECT_DIR$/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/src/com/sundy/Ddot/utils" />
       <recent name="$PROJECT_DIR$/res/layout" />
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/com/sundy/Ddot/ui/view" />
@@ -687,13 +690,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1294" y="44" width="1139" height="1006" extended-state="0" />
+    <frame x="1329" y="23" width="1046" height="1114" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28786737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938856" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32247192" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -703,20 +707,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49213484" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26404494" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22845691" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23547094" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940048" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976282" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579763" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32247192" sideWeight="0.49964362" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31474105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3216433" sideWeight="0.49964362" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -838,31 +841,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/ContactFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5559211" vertical-offset="750" max-vertical-offset="2567">
-          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/adapters/ImagaHListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.82592595" vertical-offset="565" max-vertical-offset="1105">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/adapters/ContactsListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="531" max-vertical-offset="1258">
-          <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/MessageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3077" max-vertical-offset="4182">
-          <caret line="199" column="43" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,6 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5846906" vertical-offset="1392" max-vertical-offset="2006">
           <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,13 +1069,6 @@
         <state vertical-scroll-proportion="0.1369863" vertical-offset="243" max-vertical-offset="3893">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/StoreInfoFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46905538" vertical-offset="1463" max-vertical-offset="2312">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1155,13 +1132,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/adapters/ContactsListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1258">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/d_message.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32020548" vertical-offset="0" max-vertical-offset="833">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/MessageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22149837" vertical-offset="408" max-vertical-offset="3910">
+          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/d_layout_back.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4840871" vertical-offset="0" max-vertical-offset="597">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/d_contact.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66952056" vertical-offset="0" max-vertical-offset="782">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/ContactFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2247557" vertical-offset="355" max-vertical-offset="3009">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6520681" vertical-offset="460" max-vertical-offset="1309">
-          <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.64274323" vertical-offset="447" max-vertical-offset="1309">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
           <folding>
             <element signature="e#1395#1413#0" expanded="true" />
             <element signature="e#1864#1882#0" expanded="true" />
+            <element signature="e#3183#3199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/StoreInfoFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39889196" vertical-offset="1463" max-vertical-offset="2312">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sundy/Ddot/ui/fragment/OrderSearchFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39319727" vertical-offset="0" max-vertical-offset="4505">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#1780#1808#0" expanded="true" />
+            <element signature="e#3394#3929#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#9168#9564#0" expanded="true" />
+            <element signature="e#9563#9564#0" expanded="true" />
           </folding>
         </state>
       </provider>

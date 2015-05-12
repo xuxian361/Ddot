@@ -7,9 +7,27 @@
               android:background="@color/d_base_bg"
               android:id="@+id/linear_all">
 
-    <include android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             layout="@layout/d_layout_back"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <include android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 layout="@layout/d_layout_back"/>
+
+        <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_add_contact"
+                android:src="@drawable/d_icon_add"
+                android:layout_alignParentRight="true"
+                android:scaleType="center"/>
+
+    </RelativeLayout>
+
 
     <com.sundy.Ddot.ui.view.xlist.XListView
             android:id="@+id/lv_contact"

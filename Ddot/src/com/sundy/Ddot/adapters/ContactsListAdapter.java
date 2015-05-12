@@ -68,9 +68,9 @@ public class ContactsListAdapter extends BaseAdapter {
 
         try {
             JSONObject item = (JSONObject) list.get(i);
-            holder.txt_name.setText(item.getString("user_name"));
+            holder.txt_name.setText(item.getString("name"));
 
-            String imgUrl = item.getString("user_img");
+            String imgUrl = item.getString("image");
             AQuery img_aq = new AQuery(holder.img);
             img_aq.image(imgUrl).clicked(new View.OnClickListener() {
                 @Override
