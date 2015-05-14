@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/d_base_bg"
+              android:id="@+id/linear_all">
+
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             layout="@layout/d_layout_back"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.sundy.Ddot.ui.view.xlist.XListView
+                android:id="@+id/lv_comments"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:fadingEdgeLength="0dp"
+                android:fastScrollEnabled="true"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:listSelector="#0000"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -65,6 +65,7 @@ public class StoreInfoFragment extends BaseFragment {
         aq.id(R.id.img_phone).clicked(onClick);
         aq.id(R.id.img_address).clicked(onClick);
         aq.id(R.id.linear_share).clicked(onClick);
+        aq.id(R.id.relative_comments).clicked(onClick);
 
         lv_imgs = (HListView) aq.id(R.id.lv_imgs).getView();
         adapter = new ImagaHListAdapter(getActivity(), getActivity().getLayoutInflater());
@@ -77,7 +78,6 @@ public class StoreInfoFragment extends BaseFragment {
                     images.add((String) imgs.get(i));
                 }
             }
-
             adapter.setData(images);
             adapter.notifyDataSetChanged();
         } catch (JSONException e) {
@@ -117,9 +117,16 @@ public class StoreInfoFragment extends BaseFragment {
                 case R.id.linear_share:
                     share(view);
                     break;
+                case R.id.relative_comments:
+                    goComments();
+                    break;
             }
         }
     };
+
+    private void goComments() {
+        addContent(new CommentsListFragment());
+    }
 
     private void share(View view) {
         try {

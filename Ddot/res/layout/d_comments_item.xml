@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+        <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/img"
+                android:scaleType="fitXY"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5-23 3:23"
+                android:id="@+id/txt_date"
+                android:layout_alignParentRight="true"
+                style="@style/txt_font_normal_12_grey"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sundy Xu"
+                android:id="@+id/txt_name"
+                style="@style/txt_font_normal"
+                android:layout_toRightOf="@+id/img"
+                android:layout_toLeftOf="@+id/txt_date"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/txt_line"
+                android:layout_below="@+id/txt_name"
+                android:layout_toRightOf="@+id/img"
+                android:background="@color/grey"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="三星这间店还行吧，Bra~~~"
+                android:id="@+id/txt_content"
+                style="@style/txt_font_normal_12"
+                android:layout_toRightOf="@+id/img"
+                android:layout_below="@+id/txt_line"/>
+    </RelativeLayout>
+</LinearLayout>

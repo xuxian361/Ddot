@@ -140,15 +140,15 @@
 
 
                 <it.sephiroth.android.library.widget.HListView
-                        android:scrollbars="none"
-                        android:id="@+id/lv_imgs"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:divider="@null"
-                        app:dividerWidth="1dp"
-                        android:fadingEdge="none"
-                        android:layout_below="@+id/relative_hot_restaurant"
-                        />
+                    android:scrollbars="none"
+                    android:id="@+id/lv_imgs"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:divider="@null"
+                    app:dividerWidth="1dp"
+                    android:fadingEdge="none"
+                    android:layout_below="@+id/relative_hot_restaurant"
+                    />
                 <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -220,17 +220,18 @@
                 </RelativeLayout>
                 <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp">
+                        android:id="@+id/relative_comments"
+                        >
                     <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="135****6578"
                             android:id="@+id/txt_user"
                             android:textSize="10dp"
-                            android:maxLines="1"/>
+                            android:maxLines="1" android:layout_centerVertical="true"/>
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -238,7 +239,7 @@
                             android:id="@+id/txt_comment"
                             android:textSize="10dp"
                             android:layout_toRightOf="@+id/txt_user"
-                            android:maxLines="2"/>
+                            android:maxLines="2" android:layout_centerVertical="true"/>
                     <ImageView
                             android:layout_width="15dp"
                             android:layout_height="15dp"
@@ -250,7 +251,6 @@
                 <TextView android:layout_width="match_parent"
                           android:layout_height="1dp"
                           android:background="@color/d_base_color_line_gray"
-                          android:layout_marginTop="5dp"
                         />
                 <TextView
                         android:layout_width="wrap_content"
