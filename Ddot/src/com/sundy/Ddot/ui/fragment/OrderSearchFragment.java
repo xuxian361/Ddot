@@ -2,12 +2,19 @@ package com.sundy.Ddot.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.androidquery.AQuery;
 import com.lidroid.xutils.util.LogUtils;
+import com.sundy.Ddot.AppController;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.StoreListAdapter;
 import com.sundy.Ddot.ui.view.xlist.XListView;
@@ -16,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,91 +134,41 @@ public class OrderSearchFragment extends BaseFragment {
     };
 
     private void getStores() {
-        String str = new String("{\n" +
-                "    \"Result\": 0, \n" +
-                "    \"FF\": [\n" +
-                "        {\n" +
-                "            \"title\": \"HTC One系列免费换膜！！\", \n" +
-                "            \"store_id\": \"12\", \n" +
-                "            \"store_name\": \"HTC服务正佳店\", \n" +
-                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
-                "            \"longitude\": \"114.356738\", \n" +
-                "            \"latitude\": \"23.676348\", \n" +
-                "            \"store_phone\": \"0752-28791990\", \n" +
-                "            \"store_info\": \"广州市天河区体育中心正佳M层HTC旗舰维修点是......\", \n" +
-                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "            \"amount\": \"200\", \n" +
-                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
-                "            \"check_count\": \"1723\", \n" +
-                "            \"booking_count\": \"230\", \n" +
-                "            \"rating\": \"4.2\", \n" +
-                "            \"comment_name\": \"135****6578\", \n" +
-                "            \"comment_count\": \"239\", \n" +
-                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
-                "            \"images\": [\n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
-                "            ], \n" +
-                "            \"brand\": \"三星\", \n" +
-                "            \"model\": \"S6 Edge\", \n" +
-                "            \"fix_part\": \"屏幕\", \n" +
-                "            \"visit_service\": \"1\", \n" +
-                "            \"check_service\": \"0\"\n" +
-                "        }, \n" +
-                "        {\n" +
-                "            \"title\": \"三星Galaxy系列屏幕维修！！\", \n" +
-                "            \"store_id\": \"16\", \n" +
-                "            \"store_name\": \"三星旗舰店\", \n" +
-                "            \"store_address\": \"广州市天河区体育中心天河正佳M层S260\", \n" +
-                "            \"longitude\": \"114.356738\", \n" +
-                "            \"latitude\": \"23.676348\", \n" +
-                "            \"store_phone\": \"0752-28791990\", \n" +
-                "            \"store_info\": \"广州市天河区体育中心正佳M层ssa三星旗舰店维修店是......\", \n" +
-                "            \"store_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "            \"amount\": \"200\", \n" +
-                "            \"release_time\": \"2015-5-2 13:45:20\", \n" +
-                "            \"check_count\": \"1723\", \n" +
-                "            \"booking_count\": \"20\", \n" +
-                "            \"rating\": \"4.6\", \n" +
-                "            \"comment_name\": \"135****6578\", \n" +
-                "            \"comment_count\": \"23\", \n" +
-                "            \"comment_content\": \"维修很快，质量还可以，总之还行吧。\", \n" +
-                "            \"images\": [\n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\", \n" +
-                "                \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
-                "            ], \n" +
-                "            \"brand\": \"三星\", \n" +
-                "            \"model\": \"S6 Edge\", \n" +
-                "            \"fix_part\": \"屏幕\", \n" +
-                "            \"visit_service\": \"1\", \n" +
-                "            \"check_service\": \"0\"\n" +
-                "        }\n" +
-                "    ], \n" +
-                "    \"Message\": \"Success\"\n" +
-                "}\n");
-        try {
-            JSONObject object = new JSONObject(str);
-            if (object.has("FF")) {
-                JSONArray FF = object.getJSONArray("FF");
-                if (FF != null) {
-                    if (FF.length() != 0) {
-                        for (int i = 0; i < FF.length(); i++) {
-                            JSONObject item = (JSONObject) FF.get(i);
-                            list.add(item);
+        String tag_json_obj = "json_store_list";
+        String url = "http://113.105.8.170:8080/weixiu/storeManager/getStoreList.do";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject object) {
+                        try {
+                            if (object.has("FF")) {
+                                JSONArray FF = object.getJSONArray("FF");
+                                if (FF != null) {
+                                    if (FF.length() != 0) {
+                                        for (int i = 0; i < FF.length(); i++) {
+                                            JSONObject item = (JSONObject) FF.get(i);
+                                            list.add(item);
+                                        }
+                                    }
+                                }
+                            }
+                            LogUtils.d("------>size = " + list.size());
+                            adapter.setData(list);
+                            adapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
-                }
-            }
-            LogUtils.d("------>size = " + list.size());
-            adapter.setData(list);
-            adapter.notifyDataSetChanged();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
     }
 
     private View.OnClickListener onClick = new View.OnClickListener() {

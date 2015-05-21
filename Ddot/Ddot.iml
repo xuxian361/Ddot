@@ -24,5 +24,6 @@
     <orderEntry type="library" name="baidu_map" level="project" />
     <orderEntry type="library" name="libammsdk" level="project" />
     <orderEntry type="module" module-name="facebook" />
+    <orderEntry type="library" name="volley" level="project" />
   </component>
 </module>
