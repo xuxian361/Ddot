@@ -117,7 +117,7 @@ public class CommentsListFragment extends BaseFragment {
 
     private void getComments() {
         String tag_json_obj = "json_comments_list";
-        String url = Constant.HTTP_BASE + "/commentsManager/getComments.do";
+        String url = Constant.HTTP_BASE + "/commentsManager/getComments.do?treasure_id=2";
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 url,
                 new Response.Listener<JSONObject>() {
@@ -150,47 +150,6 @@ public class CommentsListFragment extends BaseFragment {
                 });
 
         AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
-
-
-        String str = new String("{\n" +
-                "    \"Result\": 0, \n" +
-                "    \"FF\": [\n" +
-                "        {\n" +
-                "            \"user_id\": \"45\", \n" +
-                "            \"username\": \"Leilei\", \n" +
-                "            \"date\": \"2015-5-12 2:45:99\", \n" +
-                "            \"content\": \"三星这间店还行吧，Bra~~~\", \n" +
-                "            \"head_img\": \"http://img2.selfimg.com.cn/uedvoguecms/2015/04/27/1430102131_KqsXS4.jpg\"\n" +
-                "        }, \n" +
-                "        {\n" +
-                "            \"user_id\": \"45\", \n" +
-                "            \"username\": \"Sundy Xu\", \n" +
-                "            \"date\": \"2015-5-12 2:45:99\", \n" +
-                "            \"content\": \"三星这间店还行吧，Bra~~~\", \n" +
-                "            \"head_img\": \"http://img6.cache.netease.com/cnews/2015/5/11/201505110752240f45a.jpg\"\n" +
-                "        }\n" +
-                "    ], \n" +
-                "    \"Message\": \"Success\"\n" +
-                "}");
-        try {
-            JSONObject object = new JSONObject(str);
-            if (object.has("FF")) {
-                JSONArray FF = object.getJSONArray("FF");
-                if (FF != null) {
-                    if (FF.length() != 0) {
-                        for (int i = 0; i < FF.length(); i++) {
-                            JSONObject item = (JSONObject) FF.get(i);
-                            list.add(item);
-                        }
-                    }
-                }
-            }
-            LogUtils.d("------>size = " + list.size());
-            adapter.setData(list);
-            adapter.notifyDataSetChanged();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
     private View.OnClickListener onClick = new View.OnClickListener() {

@@ -72,6 +72,8 @@
     <string name="cancel">取消</string>
     <string name="app_id">446435425526253</string>
     <string name="choose_brand">请选择品牌</string>
+    <string name="choose_fixed_parts">请选择维修部件</string>
+    <string name="choose_model">请选择手机型号</string>
 
 
 </resources>

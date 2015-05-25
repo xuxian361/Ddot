@@ -30,7 +30,9 @@
                         android:layout_height="@dimen/edt_height"
                         android:id="@+id/edt_phone"
                         android:layout_toLeftOf="@+id/btn_getValidateCode"
-                        android:hint="@string/phone_num" android:background="@drawable/edt_bg" android:padding="5dp"
+                        android:hint="@string/phone_num"
+                        android:background="@drawable/edt_bg"
+                        android:padding="5dp"
                         android:textSize="14dp"/>
                 <Button
                         android:layout_width="wrap_content"
@@ -47,7 +49,9 @@
                     android:layout_height="@dimen/edt_height"
                     android:id="@+id/edt_vali_code"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/hint_validate_code" android:textSize="14dp" android:padding="5dp"
+                    android:hint="@string/hint_validate_code"
+                    android:textSize="14dp"
+                    android:padding="5dp"
                     android:background="@drawable/edt_bg"/>
 
             <EditText
@@ -55,7 +59,9 @@
                     android:layout_height="@dimen/edt_height"
                     android:id="@+id/edt_pwd"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/hint_password" android:textSize="14dp" android:padding="5dp"
+                    android:hint="@string/hint_password"
+                    android:textSize="14dp"
+                    android:padding="5dp"
                     android:background="@drawable/edt_bg"/>
 
             <EditText
@@ -63,15 +69,20 @@
                     android:layout_height="@dimen/edt_height"
                     android:id="@+id/edt_confirm_pwd"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/hint_confirm_password" android:textIsSelectable="false"
-                    android:textSize="14dp" android:padding="5dp" android:background="@drawable/edt_bg"/>
+                    android:hint="@string/hint_confirm_password"
+                    android:textIsSelectable="false"
+                    android:textSize="14dp"
+                    android:padding="5dp"
+                    android:background="@drawable/edt_bg"/>
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edt_height"
                     android:id="@+id/edt_username"
                     android:layout_marginTop="5dp"
-                    android:hint="@string/hint_username" android:textSize="14dp" android:padding="5dp"
+                    android:hint="@string/hint_username"
+                    android:textSize="14dp"
+                    android:padding="5dp"
                     android:background="@drawable/edt_bg"/>
 
         </LinearLayout>

@@ -70,7 +70,7 @@ public class CommentsListAdapter extends BaseAdapter {
 
         try {
             JSONObject item = (JSONObject) list.get(i);
-            holder.txt_name.setText(item.getString("username"));
+            holder.txt_name.setText(item.getString("user_name"));
             holder.txt_date.setText(item.getString("date"));
             holder.txt_content.setText(item.getString("content"));
 

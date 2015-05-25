@@ -186,7 +186,7 @@ public class OrderSearchFragment extends BaseFragment {
                                             }
                                         }
                                         new AlertDialog.Builder(getActivity())
-                                                .setTitle(getString(R.string.choose_brand))
+                                                .setTitle(getString(R.string.choose_fixed_parts))
                                                 .setSingleChoiceItems(arr, 0,
                                                         new DialogInterface.OnClickListener() {
                                                             public void onClick(DialogInterface dialog, int which) {
@@ -305,7 +305,7 @@ public class OrderSearchFragment extends BaseFragment {
 
     private void getModels() {
         String tag_json_obj = "json_models_list";
-        String url = Constant.HTTP_BASE + "/modelManager/getModel.do";
+        String url = Constant.HTTP_BASE + "/modelManager/getModel.do?brandId=2";
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 url,
                 new Response.Listener<JSONObject>() {
@@ -319,13 +319,13 @@ public class OrderSearchFragment extends BaseFragment {
                                         String arr[] = new String[FF.length()];
                                         for (int i = 0; i < FF.length(); i++) {
                                             JSONObject item = (JSONObject) FF.get(i);
-                                            String brand_name = item.getString("model_name");
+                                            String brand_name = item.getString("name");
                                             if (brand_name != null) {
                                                 arr[i] = brand_name;
                                             }
                                         }
                                         new AlertDialog.Builder(getActivity())
-                                                .setTitle(getString(R.string.choose_brand))
+                                                .setTitle(getString(R.string.choose_model))
                                                 .setSingleChoiceItems(arr, 0,
                                                         new DialogInterface.OnClickListener() {
                                                             public void onClick(DialogInterface dialog, int which) {
