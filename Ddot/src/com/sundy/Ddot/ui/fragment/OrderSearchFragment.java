@@ -1,5 +1,7 @@
 package com.sundy.Ddot.ui.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.sundy.Ddot.AppController;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.StoreListAdapter;
 import com.sundy.Ddot.ui.view.xlist.XListView;
+import com.sundy.Ddot.utils.Constant;
 import com.sundy.Ddot.utils.Utils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,6 +69,11 @@ public class OrderSearchFragment extends BaseFragment {
     private void init() {
         aq.id(R.id.btn_search_more).clicked(onClick);
         aq.id(R.id.btn_scan).clicked(onClick);
+        aq.id(R.id.btn_brand).clicked(onClick);
+        aq.id(R.id.btn_model).clicked(onClick);
+        aq.id(R.id.btn_parts).clicked(onClick);
+        aq.id(R.id.btn_store_address).clicked(onClick);
+
 
         last_updated_time = getString(R.string.just_now);
         lv_search = (XListView) aq.id(R.id.lv_search).getView();
@@ -133,9 +141,83 @@ public class OrderSearchFragment extends BaseFragment {
         }
     };
 
+    private View.OnClickListener onClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.btn_search_more:
+                    addContent(new FilterFragment());
+                    break;
+                case R.id.btn_scan:
+                    addContent(new QRScanerFragment());
+                    break;
+                case R.id.btn_brand:
+                    getBrands();
+                    break;
+                case R.id.btn_model:
+                    getModels();
+                    break;
+                case R.id.btn_parts:
+                    getFixedParts();
+                    break;
+            }
+        }
+    };
+
+    private void getFixedParts() {
+        String tag_json_obj = "json_fixed_parts_list";
+        String url = Constant.HTTP_BASE + "/fixPartManager/getFixPart.do";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject object) {
+                        try {
+                            if (object.has("FF")) {
+                                JSONArray FF = object.getJSONArray("FF");
+                                if (FF != null) {
+                                    if (FF.length() != 0) {
+                                        String arr[] = new String[FF.length()];
+                                        for (int i = 0; i < FF.length(); i++) {
+                                            JSONObject item = (JSONObject) FF.get(i);
+                                            String brand_name = item.getString("name");
+                                            if (brand_name != null) {
+                                                arr[i] = brand_name;
+                                            }
+                                        }
+                                        new AlertDialog.Builder(getActivity())
+                                                .setTitle(getString(R.string.choose_brand))
+                                                .setSingleChoiceItems(arr, 0,
+                                                        new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                dialog.dismiss();
+                                                                Log.e("sundy", "---------->which=" + which);
+                                                            }
+                                                        }
+                                                )
+                                                .setNegativeButton(getString(R.string.cancel), null)
+                                                .show();
+                                    }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+    }
+
     private void getStores() {
         String tag_json_obj = "json_store_list";
-        String url = "http://113.105.8.170:8080/weixiu/storeManager/getStoreList.do";
+        String url = Constant.HTTP_BASE + "/storeManager/getStoreList.do";
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 url,
                 new Response.Listener<JSONObject>() {
@@ -153,7 +235,6 @@ public class OrderSearchFragment extends BaseFragment {
                                     }
                                 }
                             }
-                            LogUtils.d("------>size = " + list.size());
                             adapter.setData(list);
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
@@ -171,19 +252,107 @@ public class OrderSearchFragment extends BaseFragment {
         AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
     }
 
-    private View.OnClickListener onClick = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.btn_search_more:
-                    addContent(new FilterFragment());
-                    break;
-                case R.id.btn_scan:
-                    addContent(new QRScanerFragment());
-                    break;
-            }
-        }
-    };
+    private void getBrands() {
+        String tag_json_obj = "json_brands_list";
+        String url = Constant.HTTP_BASE + "/bandManager/getBrand.do";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject object) {
+                        try {
+                            if (object.has("FF")) {
+                                JSONArray FF = object.getJSONArray("FF");
+                                if (FF != null) {
+                                    if (FF.length() != 0) {
+                                        String arr[] = new String[FF.length()];
+                                        for (int i = 0; i < FF.length(); i++) {
+                                            JSONObject item = (JSONObject) FF.get(i);
+                                            String brand_name = item.getString("brand_name");
+                                            if (brand_name != null) {
+                                                arr[i] = brand_name;
+                                            }
+                                        }
+                                        new AlertDialog.Builder(getActivity())
+                                                .setTitle(getString(R.string.choose_brand))
+                                                .setSingleChoiceItems(arr, 0,
+                                                        new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                dialog.dismiss();
+                                                                Log.e("sundy", "---------->which=" + which);
+                                                            }
+                                                        }
+                                                )
+                                                .setNegativeButton(getString(R.string.cancel), null)
+                                                .show();
+                                    }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+    }
+
+    private void getModels() {
+        String tag_json_obj = "json_models_list";
+        String url = Constant.HTTP_BASE + "/modelManager/getModel.do";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject object) {
+                        try {
+                            if (object.has("FF")) {
+                                JSONArray FF = object.getJSONArray("FF");
+                                if (FF != null) {
+                                    if (FF.length() != 0) {
+                                        String arr[] = new String[FF.length()];
+                                        for (int i = 0; i < FF.length(); i++) {
+                                            JSONObject item = (JSONObject) FF.get(i);
+                                            String brand_name = item.getString("model_name");
+                                            if (brand_name != null) {
+                                                arr[i] = brand_name;
+                                            }
+                                        }
+                                        new AlertDialog.Builder(getActivity())
+                                                .setTitle(getString(R.string.choose_brand))
+                                                .setSingleChoiceItems(arr, 0,
+                                                        new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                dialog.dismiss();
+                                                                Log.e("sundy", "---------->which=" + which);
+                                                            }
+                                                        }
+                                                )
+                                                .setNegativeButton(getString(R.string.cancel), null)
+                                                .show();
+                                    }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+    }
 
     @Override
     public void onResume() {
