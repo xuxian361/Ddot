@@ -1,15 +1,24 @@
 package com.sundy.Ddot.ui.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.androidquery.AQuery;
 import com.lidroid.xutils.util.LogUtils;
+import com.sundy.Ddot.AppController;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.adapters.CommentsListAdapter;
 import com.sundy.Ddot.adapters.StoreListAdapter;
 import com.sundy.Ddot.ui.view.xlist.XListView;
+import com.sundy.Ddot.utils.Constant;
 import com.sundy.Ddot.utils.Utils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,6 +116,42 @@ public class CommentsListFragment extends BaseFragment {
     };
 
     private void getComments() {
+        String tag_json_obj = "json_comments_list";
+        String url = Constant.HTTP_BASE + "/commentsManager/getComments.do";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject object) {
+                        try {
+                            if (object.has("FF")) {
+                                JSONArray FF = object.getJSONArray("FF");
+                                if (FF != null) {
+                                    if (FF.length() != 0) {
+                                        for (int i = 0; i < FF.length(); i++) {
+                                            JSONObject item = (JSONObject) FF.get(i);
+                                            list.add(item);
+                                        }
+                                    }
+                                }
+                            }
+                            adapter.setData(list);
+                            adapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                    }
+                });
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
+
+
         String str = new String("{\n" +
                 "    \"Result\": 0, \n" +
                 "    \"FF\": [\n" +
