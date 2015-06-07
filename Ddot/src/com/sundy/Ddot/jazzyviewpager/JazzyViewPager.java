@@ -1,4 +1,4 @@
-package jazzyviewpager;
+package com.sundy.Ddot.jazzyviewpager;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

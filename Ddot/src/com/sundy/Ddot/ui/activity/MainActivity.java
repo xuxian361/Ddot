@@ -20,7 +20,7 @@ import com.sundy.Ddot.ui.fragment.MeFragment;
 import com.sundy.Ddot.ui.fragment.MessageFragment;
 import com.sundy.Ddot.ui.fragment.OrderSearchFragment;
 import com.sundy.Ddot.utils.Utils;
-import jazzyviewpager.JazzyViewPager;
+import com.sundy.Ddot.jazzyviewpager.JazzyViewPager;
 
 import java.util.ArrayList;
 import java.util.HashMap;

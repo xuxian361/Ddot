@@ -1,7 +1,6 @@
 package com.sundy.Ddot.utils;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -9,24 +8,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Log;
-import com.facebook.FacebookException;
-import com.facebook.Session;
-import com.facebook.SessionState;
-import com.facebook.widget.WebDialog;
 import com.sundy.Ddot.R;
 import com.tencent.mm.sdk.openapi.*;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by sundy on 15/3/10.
  */
 public class ShareControl {
-    private static WebDialog feedDialog;
     private static Activity mContext;
 
     public ShareControl() {
@@ -48,74 +39,6 @@ public class ShareControl {
                 intent.putExtra(Intent.EXTRA_TEXT, data.get("content"));
             context.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_app)));
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    //----------------------------------- Facebook ------------------------------------
-    public static void shareWithFacebook(final Activity context, HashMap<String, String> data) {
-        mContext = context;
-        try {
-            String title = "";
-            if (data.get("title") != null)
-                title = data.get("title");
-            String content = "";
-            if (data.get("content") != null)
-                content = data.get("content");
-            String image = "";
-            if (data.get("image") != null)
-                image = data.get("image");
-            String url = "";
-            if (data.get("url") != null)
-                url = data.get("url");
-            final Bundle params = new Bundle();
-            params.putString("name", context.getString(R.string.app_name));
-            params.putString("caption", title);
-            params.putString("description", content);
-            params.putString("link", url);
-            params.putString("picture", image);
-            Session.openActiveSession(context, true, new Session.StatusCallback() {
-                @Override
-                public void call(Session session, SessionState state, Exception exception) {
-                    if (session != null && session.isOpened()) {
-                        feedDialog = (new WebDialog.
-                                FeedDialogBuilder(
-                                context,
-                                Session.getActiveSession(),
-                                params)).setOnCompleteListener(new WebDialog.OnCompleteListener() {
-                            @Override
-                            public void onComplete(Bundle values, FacebookException error) {
-                                if (error != null &&
-                                        error.getMessage() != null &&
-                                        error.getMessage().trim().length() > 0) {
-                                }
-                                if (values != null) {
-                                    String postId = values.getString("post_id");
-                                    if (postId != null) {
-                                    }
-                                }
-                                feedDialog.cancel();
-                            }
-                        }).build();
-                        feedDialog.setCancelable(true);
-                        feedDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                            @Override
-                            public void onDismiss(DialogInterface dialogInterface) {
-                                Log.e("", "----------->setOnDismissListener");
-                            }
-                        });
-                        feedDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                            @Override
-                            public void onShow(DialogInterface dialogInterface) {
-                                Log.e("", "----------->setOnShowListener");
-
-                            }
-                        });
-                        feedDialog.show();
-                    }
-                }
-            });
         } catch (Exception e) {
             e.printStackTrace();
         }

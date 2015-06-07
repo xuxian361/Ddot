@@ -44,7 +44,6 @@ public class ShareDialog {
         aq.id(R.id.btn_done).clicked(onClickListener);
 
         aq.id(R.id.linear_whatsapp).clicked(onClickListener);
-        aq.id(R.id.linear_facebook).clicked(onClickListener);
         aq.id(R.id.linear_email).clicked(onClickListener);
         aq.id(R.id.linear_wechat).clicked(onClickListener);
 
@@ -96,10 +95,6 @@ public class ShareDialog {
                 case R.id.linear_whatsapp:
                     dismiss();
                     ShareControl.shareWithWhatsApp(mContext, mData);
-                    break;
-                case R.id.linear_facebook:
-                    dismiss();
-                    ShareControl.shareWithFacebook(mContext, mData);
                     break;
                 case R.id.linear_email:
                     dismiss();

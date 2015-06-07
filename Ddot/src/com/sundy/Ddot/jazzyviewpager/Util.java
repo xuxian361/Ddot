@@ -1,4 +1,4 @@
-package jazzyviewpager;
+package com.sundy.Ddot.jazzyviewpager;
 
 import android.content.res.Resources;
 import android.util.TypedValue;

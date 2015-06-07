@@ -1,4 +1,4 @@
-package jazzyviewpager;
+package com.sundy.Ddot.jazzyviewpager;
 
 import android.content.Context;
 import android.graphics.Canvas;

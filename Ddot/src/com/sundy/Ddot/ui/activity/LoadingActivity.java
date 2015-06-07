@@ -7,14 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import com.androidquery.AQuery;
-import com.facebook.AppEventsLogger;
-import com.lidroid.xutils.util.LogUtils;
 import com.sundy.Ddot.R;
 import com.sundy.Ddot.utils.Constant;
 import com.sundy.Ddot.utils.Utils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -112,12 +108,10 @@ public class LoadingActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        AppEventsLogger.activateApp(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        AppEventsLogger.deactivateApp(this);
     }
 }
