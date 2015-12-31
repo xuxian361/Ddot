@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -77,6 +78,7 @@ public class RegisterActivity extends BaseActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject object) {
+                        Log.e("sundy", "------->result = " + object.toString());
                         try {
                             if (object.has("FF")) {
                                 JSONObject FF = object.getJSONObject("FF");
